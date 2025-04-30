@@ -1,0 +1,176 @@
+/* Задання глобальних стилів */
+
+/* Встановлюємо box-sizing для всіх елементів */
+html {
+  box-sizing: border-box;
+}
+
+/* Всі елементи, включаючи псевдоелементи, отримують box-sizing: inherit */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* Скидаємо відступи для основних елементів */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+picture {
+  margin: 0;
+}
+
+/* Всі зображення та елементи picture повинні бути адаптивними */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Для списків прибираємо маркери */
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Для посилань прибираємо підкреслення */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Для всіх елементів форм наслідуємо шрифт */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Стилі для зменшення анімацій та переходів при потребі */
+@media (favors-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Скидання стилів по замовчуванню */
+* {
+  padding: 0px;
+  margin: 0px;
+  border: none;
+}
+
+/* Всі елементи та їх псевдоелементи використовують box-sizing: border-box */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Посилання */
+a, a:link, a:visited {
+  text-decoration: none; /* Прибираємо підкреслення для посилань */
+}
+
+a:hover {
+  text-decoration: none; /* Підкреслення при наведенні також прибираємо */
+}
+
+/* Загальні стилі для блокових елементів */
+aside, nav, footer, header, section, main {
+  display: block;
+}
+
+/* Скидаємо розміри шрифтів для заголовків та абзаців */
+h1, h2, h3, h4, h5, h6, p {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/* Всі списки без маркерів */
+ul, ul li {
+  list-style: none;
+}
+
+/* Зображення вертикально вирівнюємо по верхньому краю */
+img {
+  vertical-align: top;
+}
+
+/* Зображення та svg мають бути адаптивними */
+img, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Адреси без курсивного шрифту */
+address {
+  font-style: normal;
+}
+
+/* Скидання стилів для форм */
+input, textarea, button, select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+/* Прибираємо очищення в Internet Explorer для інпутів */
+input::-ms-clear {
+  display: none;
+}
+
+/* Стилі для кнопок та інпутів */
+/* Стилі для кнопок та інпутів */
+button, input[type="submit"] {
+  all: unset;
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  font: inherit;
+  color: inherit;
+  display: inline-block;
+  box-shadow: none;
+  background-color: transparent;
+  background: none;
+}
+
+/* При активації або фокусуванні на інпуті чи кнопці прибираємо контур */
+input:focus, input:active,
+button:focus, button:active {
+  outline: none;
+}
+
+/* Для кнопок в Firefox прибираємо внутрішній контур */
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+/* Стилі для лейблів */
+label {
+  cursor: pointer;
+}
+
+/* Стилі для легенди */
+legend {
+  display: block;
+}
+
+

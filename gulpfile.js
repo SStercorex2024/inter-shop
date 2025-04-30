@@ -12,6 +12,16 @@ const avif = require('gulp-avif');
 const newer = require('gulp-newer');
 const ttf2woff2 = require('gulp-ttf2woff2');
 const include = require('gulp-include');
+const svgstore = require('gulp-svgstore');
+
+function sprites() {
+    return src('app/images/src/sprite/*.svg')
+        .pipe(svgstore({
+            inlineSvg: true,
+            fileName: 'sprite.svg'
+        }))
+        .pipe(dest('app/images'))
+}
 
 function pages() {
     return src('app/pages/*.html')
@@ -23,9 +33,9 @@ function pages() {
 }
 
 function fonts() {
-    return src('.app/fonts/*.ttf')
+    return src('app/fonts/*.ttf')
         .pipe(ttf2woff2())
-        .pipe(dest('.app/fonts'))
+        .pipe(dest('app/fonts'))
 
 }
 
@@ -46,15 +56,14 @@ function images() {
 }
 
 function styles() {
-    return src('app/scss/style.scss')
-        .pipe(autoprefixer())
-        .pipe(concat('style.min.css'))
-        .pipe(scss({
-            style: 'compressed'
-        }))
+    return src('app/scss/*.scss')
+        .pipe(scss({outputStyle: 'compressed'})) // Сначала компиляция SCSS в CSS
+        .pipe(autoprefixer({overrideBrowserslist: ['last 10 versions'], grid: true})) // Потом автопрефиксер
+        .pipe(concat('style.min.css')) // Потом объединение
         .pipe(dest('app/css'))
         .pipe(browserSync.stream());
 }
+
 
 function scripts() {
     return src(['app/js/main.js'])
@@ -70,21 +79,16 @@ function watching() {
             baseDir: 'app/',
         }
     })
-    watch(["app/scss/style.scss"], styles);
+    watch(["app/scss/**/*.scss"], styles);
     watch(["app/js/main.js"], scripts);
+    watch(["app/images/sprite/*.svg"], sprites);
     watch(["app/images/src"], images);
     watch(["app/components/*", "app/pages/*"], pages);
     watch(["app/*.html"]).on("change", browserSync.reload);
 }
 
 function bilding() {
-    return src([
-        "app/css/style.min.css",
-        "app/images/*.*",
-        "app/fonts/*.woff2",
-        "app/js/main.min.js",
-        'app/index.html'
-    ], {base: "app"})
+    return src(["app/css/style.min.css", "app/images/*.*", "app/fonts/*.woff2", "app/js/main.min.js", 'app/index.html'], {base: "app"})
         .pipe(dest("dist"))
 }
 
@@ -98,9 +102,10 @@ exports.styles = styles;
 exports.scripts = scripts;
 exports.watching = watching;
 exports.images = images;
+exports.sprites = sprites;
 exports.pages = pages;
 exports.bilding = bilding;
 exports.cleanDist = cleanDist;
 
 exports.bild = series(cleanDist, bilding);
-exports.default = parallel(styles, scripts, images, pages, watching);
+exports.default = parallel(styles, scripts, images, sprites, pages, watching);
