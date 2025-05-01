@@ -1,23 +1,29 @@
+@use "../base/vars";
+
 .header {
   padding: 20px 0 30px;
+  text-transform: uppercase;
+  color: vars.$color-primary;
+  font-size: 16px;
 
   &__inner {
     display: flex;
     justify-content: space-between;
-    align-content: center;
+    align-items: center;
     flex-wrap: wrap;
   }
 
   &__logo {
     width: 100%;
     text-align: center;
+    margin-bottom: 15px;
   }
 
   &__lang {
     display: flex;
 
     &--active {
-
+      @extend %opensans-700;
     }
   }
 

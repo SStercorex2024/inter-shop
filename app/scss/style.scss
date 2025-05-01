@@ -1,12 +1,14 @@
 //base
 @use "base/vars";
 @use "base/mixins";
+@use "base/reset";
 @use "base/fonts";
 @use "base/global";
-@use "base/reset";
 @use "base/container";
+@use "base/base";
 
 //block
 @use "block/header";
 @use "block/logo";
 @use "block/menu";
+@use "block/discount";
