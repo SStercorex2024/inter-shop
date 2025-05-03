@@ -82,11 +82,11 @@ select {
 
 /* Посилання */
 a, a:link, a:visited {
-  text-decoration: none; /* Прибираємо підкреслення для посилань */
+  text-decoration: none;
 }
 
 a:hover {
-  text-decoration: none; /* Підкреслення при наведенні також прибираємо */
+  text-decoration: none;
 }
 
 /* Загальні стилі для блокових елементів */
@@ -129,12 +129,19 @@ input, textarea, button, select {
   background-color: transparent;
 }
 
+/* Скидання стилів для плейсхолдерів */
+input::placeholder,
+textarea::placeholder {
+  color: inherit;
+  opacity: 1;
+  font-family: inherit;
+}
+
 /* Прибираємо очищення в Internet Explorer для інпутів */
 input::-ms-clear {
   display: none;
 }
 
-/* Стилі для кнопок та інпутів */
 /* Стилі для кнопок та інпутів */
 button, input[type="submit"] {
   all: unset;
@@ -172,5 +179,3 @@ label {
 legend {
   display: block;
 }
-
-

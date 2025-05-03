@@ -1,3 +1,77 @@
-.footer{
+@use '../base/vars';
+
+.footer {
+  font-size: 16px;
+  color: vars.$color-text-muted;
+
+  &__elements {
+    display: flex;
+    column-gap: 83px;
+    padding: 50px 0;
+  }
+
+  &__element {
+    display: grid;
+
+    &--title {
+      margin-bottom: 20px;
+      opacity: 0.5;
+    }
+
+    &--list {
+      display: grid;
+      row-gap: 5px;
+    }
+
+    &--address {
+      line-height: 1.55;
+    }
+  }
+
+  &__nav {
+    &--list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      column-gap: 87px;
+      padding: 55px 0 44px;
+      border-bottom: 1px solid vars.$bg-border-muted;
+    }
+
+    &--link {
+    }
+  }
+
+  &__social--list {
+    display: flex;
+    column-gap: 10px;
+  }
+
+  &__input {
+    display: inline-block;
+    width: 100%;
+    padding: 1px 30px 5px 0;
+    border-bottom: 1px solid vars.$bg-border-muted;
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+
+  }
+
+  &__bottom {
+    background-color: vars.$bg-border-muted;
+  }
+
+  &__form {
+    position: relative;
+
+    &--btn {
+      position: absolute;
+      right: 0;
+      top: 1px;
+    }
+  }
 
 }

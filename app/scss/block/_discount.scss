@@ -1,7 +1,7 @@
 @use "../base/vars";
 
 .discount {
-  background-color: vars.$bg-muted;
+  background-color: vars.$bg-border-muted;
 
   &__link {
     padding: 7px 0 9px;
