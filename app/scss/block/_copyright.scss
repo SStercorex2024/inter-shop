@@ -1,0 +1,31 @@
+@use '../base/vars';
+
+.copyright {
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    color: vars.$color-primary;
+    font-size: 11px;
+    padding: 8px 26px;
+  }
+
+  &__list {
+    display: flex;
+    column-gap: 37px;
+  }
+
+  &__item {
+    position: relative;
+
+  }
+
+  &__item + .copyright__item {
+    &:after {
+      content: '|';
+      position: absolute;
+      bottom: 0;
+      left: -21px;
+    }
+  }
+}
