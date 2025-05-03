@@ -15,12 +15,12 @@ const include = require('gulp-include');
 const svgstore = require('gulp-svgstore');
 
 function sprites() {
-    return src('app/images/src/sprite/*.svg')
+    return src('app/img/src/sprite/*.svg')
         .pipe(svgstore({
             inlineSvg: true,
             fileName: 'sprite.svg'
         }))
-        .pipe(dest('app/images'))
+        .pipe(dest('app/img'))
 }
 
 function pages() {
@@ -40,19 +40,19 @@ function fonts() {
 }
 
 function images() {
-    return src(['app/images/src/*.*', '!app/images/src/*.svg'])
-        .pipe(newer('app/images'))
+    return src(['app/img/src/*.*', '!app/img/src/*.svg'])
+        .pipe(newer('app/img'))
         .pipe(avif({quality: 50}))
 
-        .pipe(src('app/images/**/*'))
-        .pipe(newer('app/images'))
+        .pipe(src('app/img/**/*'))
+        .pipe(newer('app/img'))
         .pipe(webp())
 
-        .pipe(src('app/images/**/*'))
-        .pipe(newer('app/images'))
+        .pipe(src('app/img/**/*'))
+        .pipe(newer('app/img'))
         .pipe(imagemin())
 
-        .pipe(dest('app/images'))
+        .pipe(dest('app/img'))
 }
 
 function styles() {
@@ -81,14 +81,14 @@ function watching() {
     })
     watch(["app/scss/**/*.scss"], styles);
     watch(["app/js/main.js"], scripts);
-    watch(["app/images/sprite/*.svg"], sprites);
-    watch(["app/images/src"], images);
+    watch(["app/img/sprite/*.svg"], sprites);
+    watch(["app/img/src"], images);
     watch(["app/components/*", "app/pages/*"], pages);
     watch(["app/*.html"]).on("change", browserSync.reload);
 }
 
 function bilding() {
-    return src(["app/css/style.min.css", "app/images/*.*", "app/fonts/*.woff2", "app/js/main.min.js", 'app/index.html'], {base: "app"})
+    return src(["app/css/style.min.css", "app/img/*.*", "app/fonts/*.woff2", "app/js/main.min.js", 'app/index.html'], {base: "app"})
         .pipe(dest("dist"))
 }
 
