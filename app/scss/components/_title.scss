@@ -1,0 +1,18 @@
+@use '../base/vars';
+
+.title {
+  @extend %lora-400;
+
+  &--large {
+    font-size: 80px;
+    line-height: 1.2;
+  }
+
+  &--medium {
+    font-size: 45px;
+  }
+
+  &--small {
+
+  }
+}

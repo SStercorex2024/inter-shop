@@ -12,9 +12,10 @@
 
   &__element {
     display: grid;
+    row-gap: 20px;
+    align-content: baseline;
 
     &--title {
-      margin-bottom: 20px;
       opacity: 0.5;
     }
 
@@ -38,7 +39,12 @@
       border-bottom: 1px solid vars.$bg-border-muted;
     }
 
+    &--logo {
+      margin-inline: -22px;
+    }
+
     &--link {
+      border-bottom: 1px solid vars.$color-text-muted-35;
     }
   }
 

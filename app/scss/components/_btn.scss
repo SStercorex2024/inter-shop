@@ -1,0 +1,21 @@
+@use '../base/vars';
+@use '../base/mixins';
+
+.btn {
+  &--accent {
+    padding-top: 12.5px;
+    padding-bottom: 12.5px;
+    padding-inline: 38.5px;
+    text-transform: uppercase;
+    color: vars.$color-text-btn;
+    background-color: vars.$color-accent;
+    border-radius: 3px;
+    transition: opacity 0.4s ease-in-out;
+
+    @include mixins.hover {
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+}
