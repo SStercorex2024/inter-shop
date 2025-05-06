@@ -1,7 +1,9 @@
 $color-accent: #3b2317;
 $color-primary: #513c27;
 $color-text-muted: #94897c;
-$bg-border-muted: #E9E1D7;
+$color-text-btn: #ffffff;
+$color-text-muted-35: rgba(148, 137, 124, 0.35);
+$bg-border-muted: #e9e1d7;
 
 %opensans-300 {
   font-family: 'OpenSans-Light', sans-serif;
@@ -11,6 +13,11 @@ $bg-border-muted: #E9E1D7;
 %opensans-400 {
   font-family: 'OpenSans-Regular', sans-serif;
   font-weight: 400;
+}
+
+%opensans-600 {
+  font-family: 'OpenSans-SemiBold', sans-serif;
+  font-weight: 600;
 }
 
 %opensans-700 {

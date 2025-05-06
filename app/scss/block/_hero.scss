@@ -1,0 +1,25 @@
+.hero {
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 90vh;
+
+  &__content {
+    grid-column: 3/5;
+    display: flex;
+    flex-direction: column;
+    row-gap: 60px;
+
+    &-text {
+      padding-top: 115px;
+    }
+
+    &-wrapper {
+    }
+  }
+
+  &__btn {
+    text-align: center;
+    align-self: baseline;
+  }
+}

@@ -13,12 +13,15 @@ const newer = require('gulp-newer');
 const ttf2woff2 = require('gulp-ttf2woff2');
 const include = require('gulp-include');
 const svgstore = require('gulp-svgstore');
+const plumber = require('gulp-plumber');
+const rename = require('gulp-rename');
+const merge = require('merge-stream');
+
 
 function sprites() {
     return src('app/img/src/sprite/*.svg')
         .pipe(svgstore({
-            inlineSvg: true,
-            fileName: 'sprite.svg'
+            inlineSvg: true, fileName: 'sprite.svg'
         }))
         .pipe(dest('app/img'))
 }
@@ -40,20 +43,33 @@ function fonts() {
 }
 
 function images() {
-    return src(['app/img/src/*.*', '!app/img/src/*.svg'])
-        .pipe(newer('app/img'))
-        .pipe(avif({quality: 50}))
+    const source = 'app/img/src/**/*.{jpg,jpeg,png}';
+    const destination = 'app/img';
 
-        .pipe(src('app/img/**/*'))
-        .pipe(newer('app/img'))
+    const jpegOutput = src(source, { base: 'app/img/src' })
+        .pipe(plumber())
+        .pipe(newer({ dest: destination, ext: '.jpg' }))
+        .pipe(imagemin([
+            imagemin.mozjpeg({ quality: 70, progressive: true }),
+        ]))
+        .pipe(rename({ extname: '.jpg' }))
+        .pipe(dest(destination));
+
+    const avifOutput = src(source, { base: 'app/img/src' })
+        .pipe(plumber())
+        .pipe(newer({ dest: destination, ext: '.avif' }))
+        .pipe(avif({ quality: 45 }))
+        .pipe(dest(destination));
+
+    const webpOutput = src(source, { base: 'app/img/src' })
+        .pipe(plumber())
+        .pipe(newer({ dest: destination, ext: '.webp' }))
         .pipe(webp())
+        .pipe(dest(destination));
 
-        .pipe(src('app/img/**/*'))
-        .pipe(newer('app/img'))
-        .pipe(imagemin())
-
-        .pipe(dest('app/img'))
+    return merge(jpegOutput, avifOutput, webpOutput);
 }
+
 
 function styles() {
     return src('app/scss/*.scss')
@@ -82,7 +98,7 @@ function watching() {
     watch(["app/scss/**/*.scss"], styles);
     watch(["app/js/main.js"], scripts);
     watch(["app/img/sprite/*.svg"], sprites);
-    watch(["app/img/src"], images);
+    watch("app/img/src/**/*.{jpg,jpeg,png}", images);
     watch(["app/components/*", "app/pages/*"], pages);
     watch(["app/*.html"]).on("change", browserSync.reload);
 }
@@ -108,4 +124,4 @@ exports.bilding = bilding;
 exports.cleanDist = cleanDist;
 
 exports.bild = series(cleanDist, bilding);
-exports.default = parallel(styles, scripts, images, sprites, pages, watching);
+exports.default = parallel(styles, scripts, sprites, pages, watching, images);
