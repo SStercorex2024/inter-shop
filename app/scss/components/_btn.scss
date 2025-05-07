@@ -2,6 +2,8 @@
 @use '../base/mixins';
 
 .btn {
+  transition: opacity 0.4s ease-in-out;
+
   &--accent {
     padding-top: 12.5px;
     padding-bottom: 12.5px;
@@ -10,12 +12,19 @@
     color: vars.$color-text-btn;
     background-color: vars.$color-accent;
     border-radius: 3px;
-    transition: opacity 0.4s ease-in-out;
+  }
 
-    @include mixins.hover {
-      &:hover {
-        opacity: 0.5;
-      }
+  &--alt {
+    font-size: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: vars.$color-text-muted;
+    border: 1px solid vars.$color-text-muted;
+  }
+
+  @include mixins.hover {
+    &:hover {
+      opacity: 0.5;
     }
   }
 }
