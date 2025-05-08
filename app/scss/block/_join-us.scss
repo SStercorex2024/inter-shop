@@ -1,0 +1,39 @@
+@use "../base/vars";
+
+.join-us {
+  background-color: vars.$bg-border-muted;
+  &__content {
+    padding: 35px 40px 35px 0;
+  }
+  &__title {
+    margin-bottom: 20px;
+  }
+  &__text {
+    margin-bottom: 40px;
+  }
+  &__description {
+    color: vars.$color-primary;
+    font-size: 30px;
+  }
+  &__form {
+    display: grid;
+    row-gap: 20px;
+  }
+  &__input {
+    display: inline-block;
+    width: 100%;
+    padding-bottom: 10px;
+    border-bottom: 1px solid vars.$color-text-muted;
+    color: vars.$color-text-muted;
+    transition: color 0.3s ease-in-out;
+  }
+
+  &__input + .join-us__input {
+    margin-top: 20px;
+  }
+  &__caption {
+    font-size: 11px;
+    line-height: 1.3;
+    color: vars.$color-primary;
+  }
+}
