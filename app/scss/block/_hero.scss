@@ -1,5 +1,4 @@
 .hero {
-
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 90vh;
@@ -13,12 +12,9 @@
     &-text {
       padding-top: 115px;
     }
-
-    &-wrapper {
-    }
   }
 
-  &__btn {
+  &__link {
     text-align: center;
     align-self: baseline;
   }

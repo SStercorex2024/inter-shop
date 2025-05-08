@@ -2,7 +2,8 @@
 @use "../base/mixins";
 
 .btn {
-  transition: opacity 0.4s ease-in-out, background-color 0.2s ease-in-out;
+  transition: opacity 0.4s ease-in-out, background-color 0.3s ease-in-out,
+    color 0.4s ease-in-out;
 
   &--accent {
     padding-top: 12.5px;
@@ -13,8 +14,9 @@
     background-color: vars.$color-accent;
     border-radius: 3px;
 
-    &:focus {
+    @include mixins.focus {
       background-color: vars.$color-focus;
+      outline: none;
     }
   }
 
@@ -25,17 +27,17 @@
     color: vars.$color-text-muted;
     border: 1px solid vars.$color-text-muted;
 
-    &:focus {
+    @include mixins.focus {
       color: vars.$color-focus;
+      outline: none;
     }
   }
 
+  &:active {
+    background-color: vars.$color-active;
+  }
+
   @include mixins.hover {
-    &:active {
-      background-color: black;
-    }
-    &:hover {
-      opacity: 0.5;
-    }
+    opacity: 0.5;
   }
 }
