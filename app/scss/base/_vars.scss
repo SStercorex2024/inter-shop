@@ -4,39 +4,42 @@ $color-text-muted: #94897c;
 $color-text-btn: #ffffff;
 $color-text-muted-35: rgba(148, 137, 124, 0.35);
 $bg-border-muted: #e9e1d7;
+$color-focus: #ff6d05;
+$color-active: #616161ab;
+
 
 %opensans-300 {
-  font-family: 'OpenSans-Light', sans-serif;
+  font-family: "OpenSans-Light", sans-serif;
   font-weight: 300;
 }
 
 %opensans-400 {
-  font-family: 'OpenSans-Regular', sans-serif;
+  font-family: "OpenSans-Regular", sans-serif;
   font-weight: 400;
 }
 
 %opensans-600 {
-  font-family: 'OpenSans-SemiBold', sans-serif;
+  font-family: "OpenSans-SemiBold", sans-serif;
   font-weight: 600;
 }
 
 %opensans-700 {
-  font-family: 'OpenSans-Bold', sans-serif;
+  font-family: "OpenSans-Bold", sans-serif;
   font-weight: 700;
 }
 
 %lora-400 {
-  font-family: 'Lora-Regular', sans-serif;
+  font-family: "Lora-Regular", sans-serif;
   font-weight: 400;
 }
 
 %lora-500 {
-  font-family: 'Lora-Medium', serif;
+  font-family: "Lora-Medium", serif;
   font-weight: 500;
 }
 
 %inter-400 {
-  font-family: 'Inter-Regular', serif;
+  font-family: "Inter-Regular", serif;
   font-weight: 400;
 }
 
@@ -44,4 +47,3 @@ $bg-border-muted: #e9e1d7;
   --container-width: 1220px;
   --container-padding: 10px;
 }
-

@@ -22,20 +22,37 @@
   &__lang {
     display: flex;
 
+    &-link {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 3px;
+        width: 100%;
+        height: 1px;
+        background-color: vars.$color-primary;
+        transform: scaleX(0);
+        transform-origin: 50% 50%;
+        transition: transform 0.3s ease;
+      }
+
+      &:not(.header__lang--active):hover::after {
+        transform: scaleX(1);
+        transform-origin: 50% 50%;
+      }
+    }
+
     &--active {
       @extend %opensans-700;
     }
   }
 
   &__actions {
-
     &-list {
       display: flex;
       column-gap: 20px;
-    }
-
-    &-item {
-
     }
   }
 }

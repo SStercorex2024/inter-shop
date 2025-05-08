@@ -1,0 +1,47 @@
+<section class="join-us">
+  <div class="container">
+    <div class="join-us__wrapper grid grid--2">
+      <picture>
+        <source srcset="img/join-us/join-us-1.avif" type="image/avif" />
+        <source srcset="img/join-us/join-us-1.webp" type="image/webp" />
+        <img
+          class="img/join-us/join-us__jpg"
+          src="join-us-1.jpg"
+          alt="the woman"
+          loading="lazy"
+        />
+      </picture>
+      <div class="join-us__content">
+        <div class="join-us__text">
+          <h2 class="join-us__title title title--medium">JOIN US</h2>
+          <p class="join-us__description title">
+            Sign up and get 10% discount on your first purchase!
+          </p>
+        </div>
+        <form class="join-us__form" action="">
+          <input
+            class="join-us__input"
+            type="text"
+            required
+            placeholder="First Name"
+          />
+          <input
+            class="join-us__input"
+            type="email"
+            pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+            title="Please enter a valid email (for example: example@mail.com)"
+            required
+            placeholder="Email"
+          />
+          <button class="join-us__btn btn btn--accent" type="submit">
+            GET 10%
+          </button>
+          <p class="join-us__caption">
+            *By compleating this form you are signing up to receive our emails
+            and can unsubscribe at any time.
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

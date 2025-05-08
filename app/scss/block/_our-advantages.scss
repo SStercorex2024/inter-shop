@@ -1,0 +1,49 @@
+@use "../base/vars";
+
+.our-advantages {
+  background-color: vars.$bg-border-muted;
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    padding: 64px 0 34px;
+  }
+  &__img {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+  &__decore {
+    position: absolute;
+    right: 0;
+    bottom: 8px;
+  }
+
+  &__inner {
+    margin-left: auto;
+    padding-right: 130px;
+  }
+  &__title {
+    margin-bottom: 50px;
+  }
+  &__list {
+    column-count: 2;
+    column-gap: 80px;
+  }
+  &__item {
+    position: relative;
+    color: vars.$color-primary;
+    padding-left: 50px;
+    margin-bottom: 30px;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      background: url("../img/our-advantages/our-advantages-lily.svg");
+      width: 30px;
+      height: 22px;
+    }
+  }
+}

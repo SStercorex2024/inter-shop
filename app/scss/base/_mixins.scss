@@ -11,3 +11,15 @@
     }
   }
 }
+
+@mixin focus {
+  &:focus-visible {
+    @content;
+  }
+
+  @media (hover: none) {
+    &:focus {
+      outline: none;
+    }
+  }
+}

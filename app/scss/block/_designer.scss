@@ -1,0 +1,53 @@
+@use "../base/vars";
+
+.designer {
+  position: relative;
+  &__wrapper {
+    padding: 150px 40px 210px;
+  }
+  &__decor-img {
+    position: absolute;
+    left: 50%;
+    top: -224px;
+    transform: translateX(-50%);
+    z-index: 6;
+  }
+  &__text {
+    width: 404px;
+  }
+  &__title {
+    margin-bottom: 50px;
+  }
+
+  &__description {
+    font-size: 16px;
+    color: vars.$color-text-muted;
+  }
+
+  &__description + .designer__description {
+    margin-top: 30px;
+  }
+
+  &__box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  &__link {
+    margin-top: auto;
+    display: inline-block;
+    padding-inline: 93px;
+    align-self: center;
+  }
+  &__caption {
+    position: absolute;
+    top: 30%;
+    right: 75%;
+    padding: 20px 18px;
+    width: 304px;
+    border: 3px solid vars.$bg-border-muted;
+    color: vars.$color-primary;
+    background-color: vars.$color-text-btn;
+  }
+}
