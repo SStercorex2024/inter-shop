@@ -1,4 +1,5 @@
 @use "../base/vars";
+@use "../base/mixins";
 
 .join-us {
   background-color: vars.$bg-border-muted;
@@ -26,10 +27,18 @@
     border-bottom: 1px solid vars.$color-text-muted;
     color: vars.$color-text-muted;
     transition: color 0.3s ease-in-out;
+
+    @include mixins.focus {
+      color: vars.$color-focus;
+    }
   }
 
   &__input + .join-us__input {
     margin-top: 20px;
+  }
+  &__btn {
+    position: relative;
+    z-index: 9;
   }
   &__caption {
     font-size: 11px;
