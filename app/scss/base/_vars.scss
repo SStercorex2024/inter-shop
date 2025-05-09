@@ -1,3 +1,6 @@
+$container-width: 1220px;
+$container-padding: 10px;
+
 $color-accent: #3b2317;
 $color-primary: #513c27;
 $color-text-muted: #94897c;
@@ -6,7 +9,6 @@ $color-text-muted-35: rgba(148, 137, 124, 0.35);
 $bg-border-muted: #e9e1d7;
 $color-focus: #ff6d05;
 $color-active: #616161ab;
-
 
 %opensans-300 {
   font-family: "OpenSans-Light", sans-serif;
@@ -41,9 +43,4 @@ $color-active: #616161ab;
 %inter-400 {
   font-family: "Inter-Regular", serif;
   font-weight: 400;
-}
-
-:root {
-  --container-width: 1220px;
-  --container-padding: 10px;
 }
