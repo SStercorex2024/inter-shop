@@ -11,12 +11,6 @@
   &__link {
     outline: none;
     position: relative;
-    /*    transition: color 0.3s ease;
-
-    @include mixins.focus {
-      outline: none;
-      color: vars.$color-focus
-    } */
 
     &::after {
       content: "";
