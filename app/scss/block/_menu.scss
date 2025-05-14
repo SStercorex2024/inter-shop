@@ -1,5 +1,5 @@
-@use '../base/vars';
-@use '../base/mixins';
+@use "../base/vars";
+@use "../base/mixins";
 
 .menu {
   &__list {
@@ -9,10 +9,17 @@
   }
 
   &__link {
+    outline: none;
     position: relative;
+    /*    transition: color 0.3s ease;
+
+    @include mixins.focus {
+      outline: none;
+      color: vars.$color-focus
+    } */
 
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       left: 0;
       bottom: 3px;
@@ -24,12 +31,12 @@
       transition: transform 0.3s ease;
     }
 
-    &:hover::after {
+    &:hover::after,
+    &:focus::after {
       transform: scaleX(1);
       transform-origin: 50% 50%;
     }
   }
-
 
   &__link.menu__link--active {
     @extend %opensans-600;

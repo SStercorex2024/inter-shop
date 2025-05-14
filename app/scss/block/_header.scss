@@ -1,4 +1,5 @@
 @use "../base/vars";
+@use "../base/mixins";
 
 .header {
   padding: 20px 0 30px;
@@ -24,6 +25,7 @@
 
     &-link {
       position: relative;
+      outline: none;
 
       &::after {
         content: "";
@@ -38,7 +40,8 @@
         transition: transform 0.3s ease;
       }
 
-      &:not(.header__lang--active):hover::after {
+      &:not(.header__lang--active):hover::after,
+      &:not(.header__lang--active):focus::after {
         transform: scaleX(1);
         transform-origin: 50% 50%;
       }
@@ -53,6 +56,19 @@
     &-list {
       display: flex;
       column-gap: 20px;
+    }
+    &-item {
+      transition: background-color 0.3s ease;
+      display: block;
+      border-radius: 3px;
+
+      @include mixins.focus {
+        outline: none;
+        background-color: vars.$color-focus;
+      }
+      @include mixins.hover {
+        background-color: vars.$color-focus;
+      }
     }
   }
 }

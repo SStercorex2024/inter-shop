@@ -2,7 +2,7 @@
 
 .container {
   margin: 0 auto;
-  padding: vars.$container-padding;
+  padding-inline: vars.$container-padding;
 
   max-width: vars.$container-width;
   width: 100%;

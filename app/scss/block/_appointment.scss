@@ -1,0 +1,44 @@
+@use "../base/vars";
+@use "../base/mixins";
+
+.appointment {
+  &__title {
+    padding-top: 50px;
+    padding-bottom: 78px;
+    text-align: center;
+  }
+  &__wrapper {
+    padding-inline: 30px;
+  }
+  &__form-box {
+    display: flex;
+    flex-direction: column;
+  }
+  &__form-title {
+    margin-bottom: 80px;
+  }
+  &__form-description {
+    color: vars.$color-text-muted;
+    margin-bottom: 30px;
+    @extend %opensans-700;
+  }
+  &__input {
+    color: vars.$color-text-muted;
+    padding-bottom: 10px;
+    border-bottom: 1px solid vars.$color-text-muted;
+    &::placeholder {
+      color: vars.$color-text-muted;
+    }
+    @include mixins.focus {
+      color: vars.$color-focus;
+    }
+  }
+  &__input + .appointment__input {
+    margin-top: 20px;
+  }
+  &__btn {
+    margin-top: auto;
+  }
+  &__img {
+  }
+}

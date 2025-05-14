@@ -50,7 +50,7 @@ function images() {
         .pipe(plumber())
         .pipe(newer({ dest: destination, ext: '.jpg' }))
         .pipe(imagemin([
-            imagemin.mozjpeg({ quality: 70, progressive: true }),
+            imagemin.mozjpeg({ quality: 85, progressive: true }),
         ]))
         .pipe(rename({ extname: '.jpg' }))
         .pipe(dest(destination));
@@ -58,13 +58,13 @@ function images() {
     const avifOutput = src(source, { base: 'app/img/src' })
         .pipe(plumber())
         .pipe(newer({ dest: destination, ext: '.avif' }))
-        .pipe(avif({ quality: 45 }))
+        .pipe(avif({ quality: 75 }))
         .pipe(dest(destination));
 
     const webpOutput = src(source, { base: 'app/img/src' })
         .pipe(plumber())
         .pipe(newer({ dest: destination, ext: '.webp' }))
-        .pipe(webp())
+        .pipe(webp({ quality: 85 }))
         .pipe(dest(destination));
 
     return merge(jpegOutput, avifOutput, webpOutput);
