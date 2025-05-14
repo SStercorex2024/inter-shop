@@ -9,6 +9,11 @@
     flex-direction: column;
     row-gap: 60px;
 
+    &-title {
+      font-size: 80px;
+      line-height: 1.2;
+    }
+
     &-text {
       padding-top: 115px;
     }

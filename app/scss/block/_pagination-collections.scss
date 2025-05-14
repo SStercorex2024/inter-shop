@@ -1,0 +1,80 @@
+@use "../base/vars";
+@use "../base/mixins";
+
+.pagination-collections {
+  padding: 50px 0 100px;
+  &__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 2px;
+  }
+  &__item {
+  }
+
+  &__link {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: vars.$color-accent;
+    font-size: 16px;
+
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out,
+      opacity 0.3s ease-in-out;
+
+    @include mixins.hover {
+      color: vars.$color-focus;
+    }
+    @include mixins.focus {
+      outline: none;
+      color: vars.$color-focus;
+    }
+  }
+
+  &__link--active {
+    background-color: vars.$color-text-muted;
+    color: vars.$color-text-btn;
+    border-radius: 8px;
+  }
+  &__link--active .pagination-collections__link--active {
+    @include mixins.focus {
+      color: vars.$color-focus;
+    }
+  }
+
+  &__link--arrow {
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      left: 12;
+      bottom: 3px;
+      width: 50%;
+      height: 1px;
+      background-color: vars.$color-primary;
+      transform: scaleX(0);
+      transform-origin: 50% 50%;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover::after,
+    &:focus::after {
+      transform: scaleX(1);
+      transform-origin: 50% 50%;
+    }
+  }
+  &__decor {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: vars.$color-text-muted;
+    user-select: none;
+  }
+  &__link--disabled {
+    display: none;
+  }
+}
