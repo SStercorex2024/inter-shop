@@ -11,8 +11,17 @@
     padding: 0 30px 128px;
   }
   &__form-box {
+    position: relative;
     display: flex;
     flex-direction: column;
+  }
+  &__decor {
+    position: absolute;
+    top: -66px;
+    right: -182px;
+  }
+  &__img {
+    z-index: 22;
   }
   &__form-title {
     margin-bottom: 80px;
