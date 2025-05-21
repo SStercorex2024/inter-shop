@@ -1,0 +1,11 @@
+{% for item in items %}
+<div class="accessories__slide swiper-slide">
+    <picture>
+        <source srcset="img/accessories/accessories-{{item.img}}.avif" type="image/avif">
+        <source srcset="img/accessories/accessories-{{item.img}}.webp" type="image/webp">
+        <img class="accessories__slide-img" src="img/accessories/accessories-{{item.img}}.jpg" alt="Alt text" loading="lazy">
+    </picture>
+    <p class="accessories__slide-title">{{item.name}}</p>
+    <p class="accessories__slide-price">{{item.price}}</p>
+</div>
+{% endfor %}

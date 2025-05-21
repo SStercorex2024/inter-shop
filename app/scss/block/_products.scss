@@ -1,5 +1,6 @@
 @use "../base/vars";
 @use "../base/mixins";
+@use "../../../node_modules/swiper/swiper-bundle.css";
 
 .products {
   margin-bottom: 150px;
@@ -168,4 +169,42 @@
   border: 1px solid vars.$color-accent;
   margin-left: -20px;
   margin-top: 2px;
+}
+
+.accessories {
+  margin-bottom: 90px;
+  &__inner {
+  }
+  &__title {
+    text-align: center;
+    max-width: 890px;
+    margin: 0 auto 40px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid vars.$bg-border-muted;
+  }
+  &__slider {
+  }
+  &__wrapper {
+  }
+  &__slide {
+    text-align: center;
+  }
+  &__slide-img {
+    margin-bottom: 20px;
+  }
+  &__slide-title {
+    color: vars.$color-primary;
+    margin-bottom: 10px;
+  }
+  &__slide-price {
+    margin-top: auto;
+    @extend %opensans-700;
+    color: vars.$color-primary;
+  }
+  &__arrow {
+  }
+}
+.arrow-next {
+}
+.arrow-prev {
 }
