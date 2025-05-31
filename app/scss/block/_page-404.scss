@@ -1,0 +1,99 @@
+@use "../base/vars";
+@use "../base/mixins";
+
+.page-404 {
+  &__container {
+    margin-inline: auto;
+    padding: 40px 18px 22px 40px;
+  }
+  &__inner {
+    display: flex;
+    justify-content: center;
+  }
+  &__box-left {
+  }
+  &__img-1 {
+  }
+  &__box-center {
+    margin-inline: 32px 14px;
+    width: 732px;
+    display: flex;
+    flex-direction: column;
+
+    span {
+      @extend %lora-400;
+      line-height: 110%;
+      font-size: 160px;
+      display: inline-block;
+      margin-top: 240px;
+    }
+  }
+  &__box-text {
+    position: relative;
+    @extend %lora-400;
+    font-size: 48px;
+    line-height: 120%;
+    margin-top: auto;
+    display: flex;
+
+    img {
+      padding: 10px;
+      margin-top: auto;
+      margin-left: auto;
+    }
+  }
+  &__title {
+    padding: 10px;
+    display: flex;
+    text-transform: uppercase;
+  }
+  &__link {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    border-radius: 18px;
+
+    @include mixins.hover {
+      box-shadow: 0 0 24px 10px rgba(255, 109, 5, 0.2);
+    }
+  }
+  &__box-right {
+  }
+  &__img-2 {
+  }
+}
+.move {
+  opacity: 0.2;
+  overflow: hidden;
+}
+.move-row {
+  display: inline-flex;
+  white-space: nowrap;
+  column-gap: 100px;
+}
+.move-text {
+  display: inline-flex;
+  align-items: center;
+  @extend %lora-400;
+  font-size: 160px;
+  line-height: 110%;
+  text-transform: uppercase;
+  animation-name: moving;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+  img {
+    padding: 30px;
+  }
+}
+
+@keyframes moving {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
