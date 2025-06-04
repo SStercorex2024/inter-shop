@@ -58,16 +58,16 @@
       column-gap: 20px;
     }
     &-item {
-      transition: background-color 0.3s ease;
+      transition: color 0.3s ease;
       display: block;
-      border-radius: 3px;
+      border-radius: 8px;
 
       @include mixins.focus {
         outline: none;
-        background-color: vars.$color-focus;
+        color: vars.$color-focus;
       }
       @include mixins.hover {
-        background-color: vars.$color-focus;
+        color: vars.$color-focus;
       }
     }
   }

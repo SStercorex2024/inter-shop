@@ -1,15 +1,17 @@
 {
   "name": "gulp-start",
-  "version": "0.0.7.2",
+  "version": "0.0.7.4",
   "description": "my pack gulp ",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gh-pages -d dist"
   },
   "author": "stercorex",
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.29.3",
+    "gh-pages": "^6.3.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-avif": "^1.1.1",
@@ -22,6 +24,7 @@
     "gulp-newer": "^1.4.0",
     "gulp-nunjucks-render": "^2.2.3",
     "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^10.0.0",
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^6.0.1",
     "gulp-svgstore": "^9.0.0",
@@ -29,9 +32,13 @@
     "gulp-uglify-es": "^3.0.0",
     "gulp-webp": "^4.0.1",
     "merge-stream": "^2.0.0",
+    "postcss": "^8.5.3",
+    "postcss-pxtorem": "^6.1.0",
     "sass": "^1.86.3"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.7.2",
+    "bootstrap": "^5.3.6",
     "swiper": "^11.2.7"
   }
 }
