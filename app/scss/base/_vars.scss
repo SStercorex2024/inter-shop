@@ -1,15 +1,19 @@
 $container-width: 1220px;
+$container-big-width: 1540px;
 $container-padding: 10px;
 
 $color-accent: #3b2317;
 $color-primary: #513c27;
 $color-text-muted: #94897c;
+$color-muted-15: rgba(22, 24, 21, 0.15);
 $color-text-btn: #ffffff;
+$color-text-muted-35: rgba(148, 137, 124, 0.35);
 $color-text-muted-35: rgba(148, 137, 124, 0.35);
 $bg-border-muted: #e9e1d7;
 $color-focus: #ff6d05;
 $color-focus-08: rgba(255, 109, 5, 0.8);
 $color-active: #616161ab;
+$color-dark: #161815;
 
 %opensans-300 {
   font-family: "OpenSans-Light", sans-serif;

@@ -1,0 +1,161 @@
+@use "../base/vars";
+@use "../base/mixins";
+
+.blog {
+  &__top {
+    display: flex;
+    column-gap: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-top: 1px solid vars.$color-muted-15;
+    border-bottom: 1px solid vars.$color-muted-15;
+  }
+  &__top-img {
+    max-width: max-content;
+  }
+  &__top-rightbox {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+  }
+  &__top-category {
+    padding: 8px 24px;
+    font-size: 14px;
+    line-height: 140%;
+    border: 1px solid vars.$color-muted-15;
+    align-self: flex-start;
+    transition: border-color 0.3s ease-in-out;
+    @include mixins.hover {
+      border-color: vars.$color-focus;
+    }
+  }
+  &__top-title {
+    @extend %lora-400;
+    font-size: 48px;
+    line-height: 120%;
+    text-transform: uppercase;
+    transition: color 0.3s ease-in-out;
+    @include mixins.hover {
+      color: vars.$color-focus-08;
+    }
+  }
+  &__top-description {
+    font-size: 24px;
+    line-height: 130%;
+    opacity: 0.4;
+    max-width: 660px;
+  }
+  &__top-link {
+    font-size: 24px;
+    padding: 32px 64px;
+    margin-top: auto;
+    border: 1px solid vars.$color-accent;
+    align-self: flex-start;
+    text-transform: uppercase;
+  }
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+  &__nav-boxright {
+    display: flex;
+  }
+  &__nav-title {
+    @extend %lora-400;
+    font-size: 32px;
+    line-height: 130%;
+    align-content: center;
+  }
+  &__btns {
+    display: flex;
+    column-gap: 20px;
+  }
+  &__btns-item {
+    color: vars.$color-accent;
+    transition: color 0.3s ease-in;
+    @include mixins.hover {
+      color: vars.$color-focus;
+    }
+  }
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 20px;
+    row-gap: 50px;
+  }
+}
+.categories {
+  &__form {
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+  }
+  &__name {
+    font-size: 14px;
+    line-height: 140%;
+    margin-top: 20px;
+    padding: 8px 24px;
+    border: 1px solid vars.$color-muted-15;
+    align-self: flex-start;
+    transition: border-color 0.3s ease-in-out;
+    @include mixins.hover {
+      border-color: vars.$color-focus;
+    }
+  }
+  &__title {
+    font-size: 24px;
+    line-height: 130%;
+    margin-top: 16px;
+    margin-bottom: 8px;
+    transition: color 0.3s ease-in-out;
+    @include mixins.hover {
+      color: vars.$color-focus;
+    }
+  }
+  &__date {
+    font-size: 16px;
+    line-height: 140%;
+    @extend %inter-400;
+    color: vars.$color-dark;
+    opacity: 0.4;
+    margin-top: auto;
+  }
+}
+.select {
+  align-content: center;
+  cursor: pointer;
+  margin-right: 35px;
+  padding: 2px 32px 14px 4px;
+  color: vars.$color-dark;
+  opacity: 0.4;
+  border-bottom: 1px solid vars.$color-muted-15;
+  transition: color 0.3s ease-in-out;
+  @include mixins.hover {
+    color: vars.$color-focus;
+  }
+  option {
+    color: black;
+    background-color: transparent;
+  }
+}
+
+.search {
+  align-content: center;
+  margin-right: 100px;
+  padding: 2px 32px 14px 4px;
+  color: vars.$color-dark;
+  opacity: 0.4;
+  border-bottom: 1px solid vars.$color-muted-15;
+  transition: color 0.3s ease-in-out, border-bottom 0.3s ease-in-out;
+  @include mixins.hover {
+    color: vars.$color-focus;
+  }
+  &__input {
+    @include mixins.focus {
+      color: vars.$color-focus;
+    }
+  }
+}

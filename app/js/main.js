@@ -9,7 +9,7 @@ const swiper = new Swiper(".accessories__slider", {
   autoplay: {
     delay: 3000,
     disableOnInteraction: false,
-  }
+  },
 });
 
 // санітайзер
