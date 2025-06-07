@@ -1,5 +1,5 @@
 {% for item in items %}
-<div class="categories__item">
+<article class="categories__item">
     <picture>
         <source srcset="img/blog/blog-{{item.img}}.avif" type="image/avif">
         <source srcset="img/blog/blog-{{item.img}}.webp" type="image/webp">
@@ -8,5 +8,5 @@
     <a class="categories__name"  href="#">{{item.name}}</a>
     <a class="categories__title" href="#">{{item.description}}</a>
     <p class="categories__date">{{item.date}}</p>
-</div>
+</article>
 {% endfor %}
