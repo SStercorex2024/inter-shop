@@ -1,0 +1,52 @@
+{% for item in items %}
+<article class="reviews-card">
+    <div class="reviews-card__date">
+        <span class="reviews-card__day">{{ item.day }}</span>
+        <span class="reviews-card__month">{{ item.month }}</span>
+        <span class="reviews-card__year">{{ item.year }}</span>
+    </div>
+    <div class="reviews-card__rating">
+        <span class="reviews-card__number">{{ item.rating }}</span>
+
+        {% set rating = item.rating | float %}
+        {% set fullStars = rating | round(0, 'floor') %}
+        {% set emptyStars = 5 - fullStars %}
+
+        {% for i in range(1, fullStars + 1) %}
+        <svg width="24" height="24">
+            <use xlink:href="img/sprite.svg#star-full"></use>
+        </svg>
+        {% endfor %}
+
+        {% for i in range(1, emptyStars + 1) %}
+        <svg width="24" height="24">
+            <use xlink:href="img/sprite.svg#star-emp"></use>
+        </svg>
+        {% endfor %}
+    </div>
+    <div class="reviews-card__customer">
+        <picture>
+            <source srcset="img/reviews/reviews-icon-{{ item.icon }}.avif" type="image/avif">
+            <source srcset="img/reviews/reviews-icon-{{ item.icon }}.webp" type="image/webp">
+            <img width="50" height="50" class="reviews__card-icon" src="img/reviews/reviews-icon-{{ item.icon }}.jpg" loading="lazy">
+        </picture>
+        <div class="reviews-card__name">
+            {{ item.name }}
+        </div>
+    </div>
+    <p class="reviews-card__desc">
+        {{ item.desc }}
+    </p>
+    <div class="reviews-card__imgs">
+        {% if item.images %}
+        {% for img in item.images %}
+        <picture>
+            <source srcset="img/reviews/reviews-{{ img }}.avif" type="image/avif">
+            <source srcset="img/reviews/reviews-{{ img }}.webp" type="image/webp">
+            <img width="70" height="70" class="reviews-card__img" src="img/reviews/reviews-{{ img }}.jpg" loading="lazy">
+        </picture>
+        {% endfor %}
+        {% endif %}
+    </div>
+</article>
+{% endfor %}
