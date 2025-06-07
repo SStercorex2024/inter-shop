@@ -138,6 +138,9 @@ function scripts() {
     "node_modules/swiper/swiper-bundle.js",
     "app/js/main.js",
   ])
+    .pipe(plumber())
+    .pipe(include())
+    .on("error", console.log)
     .pipe(concat("main.min.js"))
     .pipe(uglify())
     .pipe(dest("app/js"))

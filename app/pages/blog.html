@@ -7,7 +7,7 @@
   <main class="main">
     <section class="blog__header">
       <div class="container-big">
-        <div class="blog__top">
+        <article class="blog__top">
           <picture>
             <source srcset="img/blog/blog-1.avif" type="image/avif">
             <source srcset="img/blog/blog-1.webp" type="image/webp">
@@ -32,12 +32,13 @@
               Read the article
             </a>
           </div>
-        </div>
+        </article>
       </div>
     </section>
     <section class="blog__categories">
+      <h2 class="visually-hidden">Blog Articles</h2>
       <div class="container-big">
-        <div class="blog__nav">
+        <nav class="blog__nav" aria-label="Blog categories and filters">
           <p class="blog__nav-title">
             Latest news
           </p>
@@ -54,10 +55,8 @@
               </div>
             </form>
             <search class="search">
-              <form class="search__form">
-                <input class="search__input" type="search" placeholder="search">
-                <button class="search__btn btn"></button>
-              </form>
+              <input class="search__input" type="search" placeholder="search">
+              <button class="search__btn btn"></button>
             </search>
             <ul class="blog__btns">
               <li class="blog__btns-item">
@@ -76,7 +75,7 @@
               </li>
             </ul>
           </div>
-        </div>
+        </nav>
         <div class="blog__cards">
           <!--=include rendered/categories.html -->
         </div>

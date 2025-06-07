@@ -1,0 +1,133 @@
+@use "../base/vars";
+@use "../base/mixins";
+
+.blog-one {
+  display: flex;
+  flex-direction: column;
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  b,
+  ul,
+  li {
+    max-width: 1220px;
+  }
+
+  h1 {
+    @extend %lora-400;
+    font-size: 96px;
+    line-height: 120%;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    column-gap: 40px;
+  }
+  &__stats {
+    display: flex;
+    opacity: 0.3;
+    align-items: center;
+  }
+  &__category {
+    @extend %inter-400;
+    padding: 8px 24px;
+    border: 1px solid vars.$color-muted-15;
+    font-size: 14px;
+    line-height: 140%;
+    transition: border-color 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+    @include mixins.hover {
+      border-color: vars.$color-focus;
+      opacity: 0.4;
+    }
+  }
+  &__date {
+    @extend %inter-400;
+    font-size: 18px;
+    line-height: 160%;
+    padding-right: 20px;
+    border-right: 1px solid vars.$color-accent;
+  }
+  &__list {
+    padding-left: 1px solid vars.$color-accent;
+    display: flex;
+    .blog-one__item {
+      list-style: none;
+      .blog-one__link {
+        display: flex;
+        column-gap: 6px;
+        align-items: center;
+        transition: color 0.3s ease-in-out;
+      }
+      @include mixins.hover {
+        color: vars.$color-focus;
+      }
+    }
+    .blog-one__link--active {
+      color: vars.$color-focus;
+    }
+  }
+  &__halfbox {
+    max-width: 716px;
+  }
+
+  picture:first-of-type {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+  }
+
+  picture {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid vars.$color-muted-15;
+    border-bottom: 1px solid vars.$color-muted-15;
+    margin-bottom: 50px;
+    margin-top: 50px;
+  }
+
+  h3 {
+    @extend %lora-400;
+    font-size: 32px;
+    line-height: 130%;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+  h3:first-of-type {
+    margin-bottom: 60px;
+  }
+  h3:last-of-type {
+    margin-bottom: 50px;
+  }
+
+  h2 {
+    @extend %lora-500;
+    font-size: 40px;
+    line-height: 130%;
+    margin-bottom: 40px;
+  }
+
+  ul {
+    margin: 25px 0;
+  }
+
+  li {
+    margin-left: 25px;
+    list-style-type: disc;
+
+    ul {
+      margin: 0;
+    }
+  }
+
+  li:has(ul) {
+    list-style-type: none;
+  }
+}
