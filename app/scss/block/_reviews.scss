@@ -10,8 +10,6 @@
       width: max-content;
     }
   }
-  &__slider-wrapper {
-  }
   &__slider-pagination {
     pointer-events: none;
     color: vars.$color-text-muted-35;
@@ -56,10 +54,6 @@
     border: 1px solid vars.$color-accent;
     margin-bottom: 60px;
   }
-  &__slide {
-  }
-  &__slide-img {
-  }
   &__slider-nav {
     position: absolute;
     left: 0;
@@ -93,7 +87,6 @@
     width: auto;
   }
 }
-
 .reviews-top {
   max-width: 1220px;
   padding: 10px;
@@ -112,7 +105,6 @@
     border-bottom: 1px solid vars.$color-accent;
   }
 }
-
 .reviews-cards {
   display: flex;
   flex-direction: column;
@@ -175,8 +167,6 @@
     &__icon {
       border-radius: 50%;
     }
-    &__name {
-    }
     &__desc {
       max-width: 1220px;
       margin-bottom: 24px;
@@ -185,8 +175,6 @@
       display: flex;
       align-items: center;
       column-gap: 10px;
-    }
-    &__img {
     }
   }
 }
