@@ -1,0 +1,9 @@
+{% for item in items %}
+<a href="#" class="reviews__slide swiper-slide">
+    <picture>
+        <source srcset="img/reviews/reviews-{{item.img}}.avif" type="image/avif">
+        <source srcset="img/reviews/reviews-{{item.img}}.webp" type="image/webp">
+        <img class="reviews__slide-img" src="img/reviews/reviews-{{item.img}}.jpg" loading="lazy">
+    </picture>
+</a>
+{% endfor %}

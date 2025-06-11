@@ -4,6 +4,7 @@
 @use "base/reset";
 @use "base/fonts";
 @use "../../node_modules/swiper/swiper-bundle.css";
+@use "../../node_modules/nouislider/dist/nouislider.css";
 @use "base/global";
 @use "base/container";
 @use "base/base";
@@ -29,6 +30,7 @@
 @use "block/page-404";
 @use "block/blog";
 @use "block/blog-one";
+@use "block/reviews";
 
 //components
 @use "components/btn";
