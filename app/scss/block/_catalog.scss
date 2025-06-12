@@ -1,0 +1,144 @@
+@use "../base/vars";
+@use "../base/mixins";
+
+.catalog {
+  &__filter-form {
+  }
+  &__filterbox {
+    padding-bottom: 20px;
+    border-bottom: 1px solid vars.$color-text-muted;
+    margin-bottom: 40px;
+  }
+  &__filterbox-title {
+    position: relative;
+    @extend %lora-400;
+    color: vars.$color-primary;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    &::after {
+      position: absolute;
+      content: "";
+      left: 0;
+      bottom: 4px;
+      width: 10px;
+      height: 10px;
+      background-color: vars.$color-primary;
+    }
+  }
+  &__filtervox-itemrange {
+  }
+  &__filterbox-items {
+  }
+  &__filterbox-itemline {
+  }
+  &__cleanbtn {
+    font-size: 12px;
+    color: vars.$color-primary;
+    text-decoration: underline;
+  }
+}
+
+.catalog-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 80px;
+  &__views {
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
+    span {
+      font-size: 12px;
+      color: vars.$color-text-muted;
+    }
+  }
+  &__list {
+    display: flex;
+    column-gap: 10px;
+  }
+  &__item {
+  }
+  &__btn {
+    display: flex;
+  }
+  &__item--active {
+  }
+  &__title {
+    @extend %lora-400;
+    font-size: 45px;
+    text-transform: uppercase;
+  }
+}
+.sort {
+  font-size: 12px;
+  color: vars.$color-text-muted;
+  select {
+    appearance: none;
+    padding: 5px 42px 5px 10px;
+    border: 1px solid vars.$color-text-muted;
+    border-radius: 3px;
+  }
+  &__wrapper {
+    position: relative;
+    svg {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+    }
+  }
+}
+.catalog-body {
+  display: flex;
+  column-gap: 40px;
+}
+.catalog-filters {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 26px;
+  border: 1px solid vars.$color-text-muted;
+  width: 270px;
+}
+.range {
+  &__inputs {
+  }
+  &__label {
+  }
+  &__min {
+  }
+  &__max {
+  }
+  &__slider {
+  }
+  &__list {
+  }
+  &__item {
+  }
+}
+
+.catalog-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 40px;
+  row-gap: 50px;
+}
+.catalog-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &__img {
+    margin-bottom: 20px;
+  }
+  &__title {
+    margin-bottom: 10px;
+    transition: color 0.2s ease-in;
+    @include mixins.hover {
+      color: vars.$color-focus;
+    }
+  }
+  &__price {
+    @extend %opensans-700;
+    margin-top: auto;
+  }
+}

@@ -14,14 +14,14 @@
             <ul class="catalog-top__list">
               <li class="catalog-top__item">
                 <button class="catalog-top__btn">
-                  <svg width="24" height="24">
+                  <svg width="20" height="20">
                     <use xlink:href="img/sprite.svg#catalog-grid"></use>
                   </svg>
                 </button>
               </li>
               <li class="catalog-top__item catalog-top__item--active">
                 <button class="catalog-top__btn">
-                  <svg width="24" height="24">
+                  <svg width="20" height="20">
                     <use xlink:href="img/sprite.svg#catalog-line"></use>
                   </svg>
                 </button>
@@ -32,6 +32,9 @@
             WEDDING DRESSES
           </h2>
           <div class="sort__wrapper">
+            <svg width="12" height="6">
+              <use xlink:href="img/sprite.svg#sort-arrow-down"></use>
+            </svg>
             <form class="sort">
               <select name="sort" id="">
                 <option value="" disabled selected>Sort by popularity</option>
@@ -43,8 +46,10 @@
             </form>
           </div>
         </div>
+        <!--catalog-top END-->
+        <!--catalog-body START-->
         <div class="catalog-body">
-          <aside class="catalog-filtres">
+          <aside class="catalog-filters">
             <form class="catalog__filter-form">
               <div class="catalog__filterbox">
                 <span class="catalog__filterbox-title">
@@ -54,10 +59,10 @@
                   <div class="range">
                     <div class="range__inputs">
                       <label class="range__label">
-                        <input class="range__min" type="number">
+                        <input class="range__min range-count" type="text">
                       </label>
                       <label class="range__label">
-                        <input class="range__max" type="number">
+                        <input class="range__max range-count" type="text">
                       </label>
                     </div>
                     <div class="range__slider"></div>
@@ -365,6 +370,7 @@
             </div>
           </div>
         </div>
+        <!--catalog-body END-->
         <!--=include templates/pagination-collections.html -->
       </div>
     </section>
