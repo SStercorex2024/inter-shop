@@ -2,15 +2,28 @@
 @use "../base/mixins";
 
 .catalog {
+  .checkbox-label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: vars.$color-primary;
+  }
+  .radio-label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: vars.$color-primary;
+  }
   &__filter-form {
   }
   &__filterbox {
     padding-bottom: 20px;
     border-bottom: 1px solid vars.$color-text-muted;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   }
   &__filterbox-title {
     position: relative;
+    display: block;
     @extend %lora-400;
     color: vars.$color-primary;
     padding-left: 20px;
@@ -28,6 +41,8 @@
   &__filtervox-itemrange {
   }
   &__filterbox-items {
+    column-count: 2;
+    column-gap: 40px;
   }
   &__filterbox-itemline {
   }
@@ -54,7 +69,7 @@
   }
   &__list {
     display: flex;
-    column-gap: 10px;
+    column-gap: 9px;
   }
   &__item {
   }
@@ -62,6 +77,8 @@
     display: flex;
   }
   &__item--active {
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0.4;
   }
   &__title {
     @extend %lora-400;
@@ -88,6 +105,7 @@
     }
   }
 }
+
 .catalog-body {
   display: flex;
   column-gap: 40px;
@@ -98,21 +116,100 @@
   padding: 20px 26px;
   border: 1px solid vars.$color-text-muted;
   width: 270px;
+  align-self: flex-start;
 }
 .range {
   &__inputs {
+    display: flex;
+    column-gap: 12px;
+    align-items: baseline;
+    color: vars.$color-text-muted;
   }
   &__label {
+    position: relative;
+    font-size: 12px;
+    color: vars.$color-primary;
+    display: inline-blockF;
+    max-width: 96px;
+    color: vars.$color-primary;
+    padding: 10px 7px 10px 14px;
+    border: 1px solid vars.$color-text-muted;
+    margin-bottom: 25px;
+    &::before {
+      position: absolute;
+      content: "€";
+      left: 3px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    input {
+      max-width: 72px;
+    }
   }
   &__min {
   }
   &__max {
   }
   &__slider {
+    margin-bottom: 15px;
+    margin-left: 11px;
+    width: 200px;
   }
   &__list {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    color: vars.$color-primary;
+    li {
+      font-size: 10px;
+      position: relative;
+      &:first-child {
+        margin-left: 2px;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        width: 1px;
+        height: 6px;
+        background-color: vars.$color-primary;
+        top: -19px;
+        left: 50%;
+      }
+    }
   }
   &__item {
+    font-size: 12px;
+    color: vars.$color-primary;
+  }
+  &-count {
+  }
+
+  .noUi-target {
+    background: vars.$color-text-muted;
+    border-radius: 0;
+    border: 0;
+    box-shadow: 0;
+  }
+  .noUi-horizontal {
+    height: 2px;
+  }
+  .noUi-connect {
+    background-color: vars.$color-text-muted;
+  }
+  .noUi-handle::before,
+  .noUi-handle::after {
+    display: none;
+  }
+  .noUi-horizontal .noUi-handle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid vars.$color-text-muted;
+    background-color: vars.$color-text-btn;
+    right: -11px;
+    top: 50%;
+    transform: translateY(-45%);
+    cursor: pointer;
   }
 }
 
@@ -139,6 +236,31 @@
   }
   &__price {
     @extend %opensans-700;
-    margin-top: auto;
+    margin-top: 10px;
+  }
+}
+.view-mode__btn-wrapper--active {
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0.4;
+}
+
+.view-mode__cards--line {
+  display: block;
+  .catalog-card {
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+    img {
+      margin-inline: 40px;
+    }
+    a {
+      margin: 0;
+      padding: 20px;
+      border: 1px solid vars.$color-accent;
+      border-radius: 8px;
+    }
+    p {
+      margin: 0;
+    }
   }
 }

@@ -12,15 +12,15 @@
           <div class="catalog-top__views">
             <span>View as</span>
             <ul class="catalog-top__list">
-              <li class="catalog-top__item">
-                <button class="catalog-top__btn">
+              <li class="catalog-top__item view-mode__btn-wrapper view-mode__btn-wrapper--active">
+                <button class="catalog-top__btn view-mode__btn--grid">
                   <svg width="20" height="20">
                     <use xlink:href="img/sprite.svg#catalog-grid"></use>
                   </svg>
                 </button>
               </li>
-              <li class="catalog-top__item catalog-top__item--active">
-                <button class="catalog-top__btn">
+              <li class="catalog-top__item view-mode__btn-wrapper">
+                <button class="catalog-top__btn view-mode__btn--line">
                   <svg width="20" height="20">
                     <use xlink:href="img/sprite.svg#catalog-line"></use>
                   </svg>
@@ -61,6 +61,7 @@
                       <label class="range__label">
                         <input class="range__min range-count" type="text">
                       </label>
+                      -
                       <label class="range__label">
                         <input class="range__max range-count" type="text">
                       </label>
@@ -68,6 +69,7 @@
                     <div class="range__slider"></div>
                     <ul class="range__list">
                       <li class="range__item">300</li>
+                      <li class="range__item">600</li>
                       <li class="range__item">1,000</li>
                       <li class="range__item">1,500</li>
                       <li class="range__item">2,000</li>
@@ -250,7 +252,7 @@
               </button>
             </form>
           </aside>
-          <div class="catalog-cards">
+          <div class="catalog-cards view-mode__cards view-mode__cards--grid">
             <div class="catalog-card">
               <picture>
                 <source srcset="img/catalog/catalog-card-1.avif" type="image/avif">
