@@ -2,6 +2,36 @@
 @use "../base/mixins";
 
 .blog {
+  .view-mode__btn-wrapper--active {
+    opacity: 0.4;
+    transition: opacity 0.3s ease;
+  }
+  .view-mode__cards--grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 20px;
+    row-gap: 50px;
+  }
+  .view-mode__cards--line {
+    display: flex;
+    flex-direction: column;
+    .categories__item {
+      flex-direction: column;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 20px;
+      a {
+        margin: auto 20px auto 20px;
+      }
+      p {
+        margin-bottom: auto;
+        margin-top: 0;
+        margin-left: auto;
+        margin-right: 40px;
+        white-space: nowrap;
+      }
+    }
+  }
   &__top {
     display: flex;
     column-gap: 40px;
@@ -73,17 +103,17 @@
     column-gap: 20px;
   }
   &__btns-item {
+    display: flex;
     color: vars.$color-accent;
     transition: color 0.3s ease-in;
     @include mixins.hover {
       color: vars.$color-focus;
     }
   }
+  &__btn {
+    display: flex;
+  }
   &__cards {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    column-gap: 20px;
-    row-gap: 50px;
   }
 }
 .categories {

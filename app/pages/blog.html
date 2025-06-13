@@ -4,7 +4,7 @@
 
 <body>
   <!--=include header.html -->
-  <main class="main">
+  <main class="blog">
     <section class="blog__header">
       <div class="container-big">
         <article class="blog__top">
@@ -59,15 +59,15 @@
               <button class="search__btn btn"></button>
             </search>
             <ul class="blog__btns">
-              <li class="blog__btns-item">
-                <button class="blog__btn">
+              <li class="blog__btns-item view-mode__btn-wrapper view-mode__btn-wrapper--active">
+                <button class="blog__btn view-mode__btn--grid">
                   <svg width="40" height="40">
                     <use xlink:href="img/sprite.svg#blog-grid"></use>
                   </svg>
                 </button>
               </li>
-              <li class="blog__btns-item">
-                <button class="blog__btn">
+              <li class="blog__btns-item view-mode__btn-wrapper">
+                <button class="blog__btn view-mode__btn--line">
                   <svg width="40" height="40">
                     <use xlink:href="img/sprite.svg#blog-list"></use>
                   </svg>
@@ -76,17 +76,17 @@
             </ul>
           </div>
         </nav>
-        <div class="blog__cards">
+        <div class="blog__cards view-mode__cards view-mode__cards--grid ">
           <!--=include rendered/categories.html -->
         </div>
       </div>
-      <!--=include templates\pagination-collections.html -->
+      <!--=include templates/pagination-collections.html -->
 
     </section>
   </main>
   <!--=include footer.html -->
 
+  <script src="js/main.js"></script>
 </body>
-<script type="module" src="/js/main.js"></script>
 
 </html>

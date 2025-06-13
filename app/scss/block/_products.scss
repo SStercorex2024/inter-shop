@@ -125,8 +125,9 @@
   height: 16px;
   border-radius: 50%;
   border: 1px solid vars.$color-accent;
-  top: 2px;
+  top: 50%;
   left: 0;
+  transform: translateY(-50%);
 }
 .checkbox-label {
   padding-left: 20px;
@@ -166,8 +167,9 @@
   height: 15px;
   border-radius: 1px;
   border: 1px solid vars.$color-accent;
-  margin-left: -20px;
-  margin-top: 2px;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
 }
 
 .accessories {
