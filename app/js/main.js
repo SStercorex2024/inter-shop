@@ -6,7 +6,13 @@
 //= include modules/rangeSlider.js
 //= include modules/inputsCount.js
 //= include modules/viewMode.js
+//= include modules/numInput.js
 
+document.addEventListener("DOMContentLoaded", function () {
+  if (typeof numbersInput === "function") {
+    numbersInput(".input-numbers-only");
+  }
+});
 if (typeof viewMode === "function") viewMode();
 if (typeof inputsCount === "function") inputsCount();
 if (typeof rangeSlider === "function") rangeSlider();
