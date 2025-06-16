@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <!--=include head.html -->
+
 <body>
   <!--=include header.html -->
   <main class="main">
@@ -30,8 +31,8 @@
                   </label>
                   <label class="checkout__infobox-label">
                     Phone*
-                    <input class="checkout__infobox-input" type="tel" maxlength="13" placeholder="Enter your phone"
-                      required>
+                    <input class="checkout__infobox-input input-numbers-only" type="tel" maxlength="13"
+                      placeholder="Enter your phone" required>
                   </label>
                   <label class="checkout__infobox-label">
                     Your Last Name*
@@ -66,9 +67,6 @@
                   </label>
                   <label class="checkout__infobox-label checkout__infobox-selectwrap" for="country">
                     Country*
-                    <svg width="12" height="6">
-                      <use xlink:href="img/sprite.svg#sort-arrow-down"></use>
-                    </svg>
                     <select name="country" id="country" class="checkout__infobox-select" required>
                       <option value="" disabled selected>Select country</option>
                       <option value="country">country</option>
@@ -76,6 +74,9 @@
                       <option value="country">country</option>
                       <option value="country">country</option>
                     </select>
+                    <svg class="checkout__infobox-selectdecor" width="20" height="20">
+                      <use xlink:href="img/sprite.svg#sort-arrow-down"></use>
+                    </svg>
                   </label>
                   <label class="checkout__infobox-label">
                     Postal code*
@@ -85,34 +86,6 @@
                   <label class="checkout__infobox-label">
                     Street name, house*
                     <input class="checkout__infobox-input" type="email" placeholder="Enter address" required>
-                  </label>
-                </div>
-              </div>
-              <!--checkout__info-item END-->
-              <!--checkout__info-item START-->
-              <div class="checkout__info-item">
-                <p class="checkout__info-title">
-                  Personal information
-                </p>
-                <div class="checkout__infobox">
-                  <label class="checkout__infobox-label">
-                    Your Name*
-                    <input class="checkout__infobox-input" minlength="2" type="text" placeholder="Enter your name"
-                      required>
-                  </label>
-                  <label class="checkout__infobox-label">
-                    Phone*
-                    <input class="checkout__infobox-input" type="number" maxlength="13" placeholder="Enter your phone"
-                      required>
-                  </label>
-                  <label class="checkout__infobox-label">
-                    Your Last Name*
-                    <input class="checkout__infobox-input" type="text" minlength="2" placeholder="Enter your last name"
-                      required>
-                  </label>
-                  <label class="checkout__infobox-label">
-                    Email*
-                    <input class="checkout__infobox-input" type="email" placeholder="Enter your email" required>
                   </label>
                 </div>
               </div>
@@ -159,22 +132,22 @@
                   Payment
                 </p>
                 <div class="checkout__infobox">
-                  <label class="checkout__infobox-label">
+                  <label class="checkout__infobox-label checkout__infobox-label--full">
                     Your card number*
-                    <input class="checkout__infobox-input" minlength="16" maxlength="16" type="number"
-                      placeholder="0000 0000 0000 0000" required>
+                    <input class="checkout__infobox-input input-numbers-only" minlength="16" maxlength="16"
+                      type="number" placeholder="0000 0000 0000 0000" required>
                   </label>
                   <label class="checkout__infobox-label">
                     Validity period*
-                    <input class="checkout__infobox-input checkout__infobox-input--half" type="number" maxlength="13"
+                    <input class="checkout__infobox-input input-numbers-only" type="number" maxlength="13"
                       placeholder="ММ/YY" required>
                   </label>
                   <label class="checkout__infobox-label">
                     Code*
-                    <input class="checkout__infobox-input checkout__infobox-input--half" type="number" minlength="3"
-                      maxlength="3" placeholder="000" required>
+                    <input class="checkout__infobox-input input-numbers-only" type="number" minlength="3" maxlength="3"
+                      placeholder="000" required>
                   </label>
-                  <label class="checkout__infobox-label">
+                  <label class="checkout__infobox-label checkout__infobox-label--full">
                     Holder name*
                     <input class="checkout__infobox-input" type="text" minlength="2" placeholder="Jane Brown" required>
                   </label>
@@ -246,7 +219,7 @@
                   </picture>
                   <div class="checkout__card-row">
                     <p class="checkout__card-title">
-                      SABINE 
+                      SABINE
                     </p>
                     <button class="btn checkout__card-delete" type="button">
                       <svg width="94" height="18">
@@ -274,20 +247,20 @@
                 <p class="checkout__order-title">
                   Your order
                 </p>
-                <div class="checkout__order-pricewrap">
-                  <p class="checkout__order-subtotal">
+                <dl class="checkout__order-pricewrap">
+                  <dt class="checkout__order-subtotal">
                     Subtotal:
-                  </p>
-                  <span class="checkout__order-numbers">€2,800</span>
-                  <p class="checkout__order-subtotal">
+                  </dt>
+                  <dd class="checkout__order-numbers">€2,800</dd>
+                  <dt class="checkout__order-subtotal">
                     Shipping:
-                  </p>
-                  <span class="checkout__order-numbers">FREE</span>
-                  <p class="checkout__order-total">
+                  </dt>
+                  <dd class="checkout__order-numbers">FREE</dd>
+                  <dt class="checkout__order-total">
                     Total:
-                  </p>
-                  <span class="checkout__order-numbers">€ 2,800</span>
-                </div>
+                  </dt>
+                  <dd class="checkout__order-numbers">€ 2,800</dd>
+                </dl>
                 <button class="btn checkout__order-btn" type="submit">Change items</button>
               </div>
               <!--checkout__order END-->
@@ -298,7 +271,7 @@
     </section>
   </main>
   <!--=include footer.html -->
+  <script src="js/main.min.js"></script>
 </body>
-<script type="module" src="js/main.js"></script>
 
 </html>

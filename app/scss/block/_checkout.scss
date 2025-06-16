@@ -1,0 +1,147 @@
+@use "../base/vars";
+@use "../base/mixins";
+
+.checkout {
+  .input-numbers-only[type="number"]::-webkit-outer-spin-button,
+  .input-numbers-only[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  .input-numbers-only[type="number"] {
+    -moz-appearance: textfield;
+  }
+  .radio-label {
+  }
+  .radio-box {
+  }
+  .radio-style {
+  }
+  .radio-text {
+  }
+  &__content {
+    display: flex;
+    column-gap: 80px;
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 80px;
+  }
+  &__info-item {
+    display: flex;
+    flex-direction: column;
+  }
+  &__info-title {
+    @extend %lora-400;
+    font-size: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid vars.$color-text-muted;
+    margin-bottom: 32px;
+  }
+  &__infobox {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  &__infobox-label {
+  }
+  &__infobox-label--full {
+    grid-column: 1/-1;
+  }
+  &__infobox-input {
+    margin-top: 12px;
+    opacity: 0.4;
+    padding: 26px 5px 26px 32px;
+    border: 1px solid vars.$color-text-muted;
+    width: 100%;
+  }
+  &__infobox-selectwrap {
+    position: relative;
+    svg {
+      right: 32px;
+      bottom: 50%;
+      transform: translateY(150%);
+      user-select: none;
+      position: absolute;
+    }
+  }
+  &__infobox-select {
+    appearance: none;
+    margin-top: 12px;
+    opacity: 0.4;
+    padding: 26px 5px 26px 32px;
+    border: 1px solid vars.$color-text-muted;
+    width: 100%;
+  }
+  &__info-desc {
+  }
+  &__info-delbox {
+  }
+  &__info-radio {
+  }
+  &__info-delprice {
+  }
+  &__infobox-agreementlink {
+  }
+  &__infobox-btn {
+  }
+  &__details {
+  }
+  &__details-title {
+  }
+  &__details-bag {
+  }
+  &__details-row {
+  }
+  &__details-desc {
+  }
+  &__details-cleanall {
+  }
+  &__details-items {
+  }
+  &__details-item {
+  }
+  &__card-img {
+  }
+  &__card-row {
+  }
+  &__card-title {
+  }
+  &__card-delete {
+  }
+  &__card-size {
+  }
+  &__card-color {
+  }
+  &__card-desc {
+  }
+  &__order {
+  }
+  &__order-title {
+  }
+  &__order-pricewrap {
+  }
+  &__order-subtotal {
+  }
+  &__order-numbers {
+  }
+  &__order-total {
+  }
+  &__order-btn {
+  }
+}
+
+.checkout-top {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 48px;
+  padding-bottom: 48px;
+  &__title {
+    font-size: 64px;
+    @extend %lora-400;
+  }
+}
