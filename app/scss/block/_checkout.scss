@@ -187,18 +187,58 @@
     margin-bottom: 40px;
   }
   &__order {
+    display: flex;
+    flex-direction: column;
+    padding: 60px 40px;
+    border: 1px solid vars.$color-text-muted;
+    margin-top: 80px;
   }
   &__order-title {
+    @extend %lora-400;
+    font-size: 32px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid vars.$color-text-muted;
+    margin-bottom: 32px;
   }
   &__order-pricewrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
   &__order-subtotal {
+    &:not(:last-of-type) {
+      margin-bottom: 32px;
+      opacity: 0.6;
+      font-size: 24px;
+    }
+    &:first-of-type {
+      margin-bottom: 20px;
+    }
   }
   &__order-numbers {
+    text-align: right;
+    &:not(:last-of-type) {
+      margin-bottom: 32px;
+      opacity: 0.6;
+      font-size: 24px;
+    }
+    &:last-of-type {
+      font-size: 32px;
+    }
+    &:first-of-type {
+      margin-bottom: 20px;
+    }
   }
   &__order-total {
+    &:last-of-type {
+      font-size: 32px;
+    }
   }
   &__order-btn {
+    @extend %lora-400;
+    padding: 30px;
+    margin-top: 80px;
+    text-transform: uppercase;
+    border: 1px solid vars.$color-text-muted;
   }
 }
 
