@@ -1,4 +1,4 @@
-@use '../base/vars';
+@use "../base/vars";
 
 .footer {
   font-size: 16px;
@@ -8,6 +8,7 @@
     display: flex;
     column-gap: 83px;
     padding: 50px 0;
+    justify-content: space-between;
   }
 
   &__element {
@@ -53,8 +54,8 @@
     column-gap: 10px;
   }
 
-  &__social--link{
-  display: block;
+  &__social--link {
+    display: block;
   }
 
   &__input {
@@ -67,7 +68,6 @@
   &__row {
     display: flex;
     justify-content: space-between;
-
   }
 
   &__bottom {
@@ -83,5 +83,4 @@
       top: 1px;
     }
   }
-
 }

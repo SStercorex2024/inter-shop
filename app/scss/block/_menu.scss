@@ -7,7 +7,9 @@
     column-gap: 30px;
     transition: all 0.3s ease-in-out;
   }
-
+  &__btn{
+    display: none;
+  }
   &__link {
     outline: none;
     position: relative;
