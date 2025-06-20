@@ -97,17 +97,17 @@
                 </p>
                 <p class="checkout__info-desc">Select delivery method*</p>
                 <div class="checkout__info-delbox">
-                  <div class="checkout__info-radio">
+                  <div class="checkout__info-radio checkout__info-radio--active">
                     <label class="radio-label">
                       <input class="radio-box" type="radio">
                       <span class="radio-style"></span>
                       Nova Poshta
-                      <span class="radio-text">
-                        Delivery will take 2-7 days
+                      <span class="checkout__info-delprice">
+                        Free
                       </span>
                     </label>
-                    <span class="checkout__info-delprice">
-                      Free
+                    <span class="radio-text">
+                      Delivery will take 2-7 days
                     </span>
                   </div>
                   <div class="checkout__info-radio">
@@ -115,12 +115,12 @@
                       <input class="radio-box" type="radio">
                       <span class="radio-style"></span>
                       Nova Poshta (home delivery)
-                      <span class="radio-text">
-                        Delivery will take 2-7 days
+                      <span class="checkout__info-delprice">
+                        €20
                       </span>
                     </label>
-                    <span class="checkout__info-delprice">
-                      €20
+                    <span class="radio-text">
+                      Delivery will take 2-7 days
                     </span>
                   </div>
                 </div>
@@ -155,7 +155,7 @@
               </div>
               <!--checkout__info-item END-->
             </form>
-            <a class="checkout__infobox-agreementlink" href="#">
+            <a class="checkout__infobox-agreementlink" target="_blank" href="#">
               By clicking the "Place an order" button, you agree to the privacy policy and user agreement
             </a>
             <button class="checkout__infobox-btn" type="submit">
@@ -174,7 +174,7 @@
                   2 items in bag
                 </p>
                 <button class="btn checkout__details-cleanall" type="button">
-                  <svg width="94" height="18">
+                  <svg width="40" height="40">
                     <use xlink:href="img/sprite.svg#clean-all"></use>
                   </svg>
                 </button>
@@ -187,26 +187,27 @@
                     <source srcset="img/checkout/order-1.webp" type="image/webp">
                     <img class="checkout__card-img" src="img/checkout/order-1.jpg" alt="Alt text">
                   </picture>
-                  <div class="checkout__card-row">
-                    <p class="checkout__card-title">
-                      NAOMI
+                  <div class="checkout__card-details">
+                    <div class="checkout__card-row">
+                      <p class="checkout__card-title">
+                        NAOMI
+                      </p>
+                      <button class="btn checkout__card-delete" type="button">
+                        <svg width="20" height="20">
+                          <use xlink:href="img/sprite.svg#trash"></use>
+                        </svg>
+                      </button>
+                    </div>
+                    <p class="checkout__card-size">
+                      <b>SIZE:</b>S
                     </p>
-                    <button class="btn checkout__card-delete" type="button">
-                      <svg width="94" height="18">
-                        <use xlink:href="img/sprite.svg#trash"></use>
-                      </svg>
-                    </button>
-                  </div>
-                  <p class="checkout__card-size">
-                    <b>SIZE:</b>S
-                  </p>
-                  <p class="checkout__card-color">
-                    <b>COLOR:</b>IVORY
-                  </p>
-                  <div class="checkout__card-row">
-                    <p class="checkout__card-desc">
-                      <b>Item subtotal:</b> <b>€ 2,600</b>
+                    <p class="checkout__card-color">
+                      <b>COLOR:</b>IVORY
                     </p>
+                    <div class="checkout__card-row">
+                      <p class="checkout__card-desc">Item subtotal:</p>
+                      <p class="checkout__card-desc">€ 2,600</p>
+                    </div>
                   </div>
                 </div>
                 <!--checkout__details-item END-->
@@ -217,26 +218,27 @@
                     <source srcset="img/checkout/order-2.webp" type="image/webp">
                     <img class="checkout__card-img" src="img/checkout/order-2.jpg" alt="Alt text">
                   </picture>
-                  <div class="checkout__card-row">
-                    <p class="checkout__card-title">
-                      SABINE
+                  <div class="checkout__card-details">
+                    <div class="checkout__card-row">
+                      <p class="checkout__card-title">
+                        SABINE
+                      </p>
+                      <button class="btn checkout__card-delete" type="button">
+                        <svg width="20" height="20">
+                          <use xlink:href="img/sprite.svg#trash"></use>
+                        </svg>
+                      </button>
+                    </div>
+                    <p class="checkout__card-size">
+                      <b>SIZE:</b>38
                     </p>
-                    <button class="btn checkout__card-delete" type="button">
-                      <svg width="94" height="18">
-                        <use xlink:href="img/sprite.svg#trash"></use>
-                      </svg>
-                    </button>
-                  </div>
-                  <p class="checkout__card-size">
-                    <b>SIZE:</b>38
-                  </p>
-                  <p class="checkout__card-color">
-                    <b>COLOR:</b>IVORY
-                  </p>
-                  <div class="checkout__card-row">
-                    <p class="checkout__card-desc">
-                      <b>Item subtotal:</b> <b>€ 200</b>
+                    <p class="checkout__card-color">
+                      <b>COLOR:</b>IVORY
                     </p>
+                    <div class="checkout__card-row">
+                      <p class="checkout__card-desc">Item subtotal:</p>
+                      <p class="checkout__card-desc">€ 200</p>
+                    </div>
                   </div>
                 </div>
                 <!--checkout__details-item END-->

@@ -11,12 +11,20 @@
     -moz-appearance: textfield;
   }
   .radio-label {
+    font-size: 24px;
+    display: flex;
+    justify-content: space-between;
+    opacity: 0.5;
   }
   .radio-box {
   }
   .radio-style {
   }
   .radio-text {
+    @extend %lora-400;
+    font-size: 14px;
+    line-height: 140%;
+    opacity: 0.4;
   }
   &__content {
     display: flex;
@@ -82,56 +90,155 @@
   &__info-delbox {
   }
   &__info-radio {
+    padding-top: 26px;
+    padding-bottom: 26px;
+    border-bottom: 1px solid vars.$color-text-muted;
   }
-  &__info-delprice {
+  &__info-radio--active {
+    .radio-label {
+      opacity: 1;
+    }
   }
   &__infobox-agreementlink {
+    width: 560px;
+    opacity: 0.4;
+    font-size: 16px;
+    line-height: 140%;
+    padding: 32px 0;
   }
   &__infobox-btn {
+    padding: 28.5px;
+    text-transform: uppercase;
+    color: vars.$color-text-btn;
+    background-color: vars.$color-accent;
+    transition: opacity 0.3s ease-in-out;
+    @include mixins.hover {
+      opacity: 0.4;
+    }
   }
   &__details {
+    display: flex;
+    flex-direction: column;
+    width: 616px;
   }
   &__details-title {
+    @extend %lora-400;
+    font-size: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid vars.$color-text-muted;
+    margin-bottom: 32px;
   }
   &__details-bag {
   }
   &__details-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: vars.$bg-border-muted;
+    margin-bottom: 30px;
   }
   &__details-desc {
+    padding: 10px 15px;
+    font-size: 16px;
   }
   &__details-cleanall {
+    display: flex;
+    padding: 6px 7px;
   }
   &__details-items {
+    display: flex;
+    row-gap: 30px;
+    flex-direction: column;
   }
   &__details-item {
+    display: grid;
+    grid-template-columns: 139px 1fr;
+    margin-inline: 10px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid vars.$color-text-muted;
+  }
+  &__card-details {
+    margin-left: 20px;
   }
   &__card-img {
   }
+  &__card-desc {
+    @extend %opensans-700;
+    font-size: 16px;
+  }
   &__card-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
   &__card-title {
+    @extend %lora-400;
   }
   &__card-delete {
+    display: flex;
   }
   &__card-size {
+    font-size: 16px;
+    margin-top: 40px;
+    margin-bottom: 10px;
   }
   &__card-color {
-  }
-  &__card-desc {
+    font-size: 16px;
+    margin-bottom: 40px;
   }
   &__order {
+    display: flex;
+    flex-direction: column;
+    padding: 60px 40px;
+    border: 1px solid vars.$color-text-muted;
+    margin-top: 80px;
   }
   &__order-title {
+    @extend %lora-400;
+    font-size: 32px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid vars.$color-text-muted;
+    margin-bottom: 32px;
   }
   &__order-pricewrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
   &__order-subtotal {
+    &:not(:last-of-type) {
+      margin-bottom: 32px;
+      opacity: 0.6;
+      font-size: 24px;
+    }
+    &:first-of-type {
+      margin-bottom: 20px;
+    }
   }
   &__order-numbers {
+    text-align: right;
+    &:not(:last-of-type) {
+      margin-bottom: 32px;
+      opacity: 0.6;
+      font-size: 24px;
+    }
+    &:last-of-type {
+      font-size: 32px;
+    }
+    &:first-of-type {
+      margin-bottom: 20px;
+    }
   }
   &__order-total {
+    &:last-of-type {
+      font-size: 32px;
+    }
   }
   &__order-btn {
+    @extend %lora-400;
+    padding: 30px;
+    margin-top: 80px;
+    text-transform: uppercase;
+    border: 1px solid vars.$color-text-muted;
   }
 }
 
