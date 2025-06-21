@@ -9,6 +9,7 @@
     column-gap: 83px;
     padding: 50px 0;
     justify-content: space-between;
+    border-top: 1px solid vars.$bg-border-muted;
   }
 
   &__element {
@@ -37,7 +38,6 @@
       align-items: center;
       column-gap: 87px;
       padding: 55px 0 44px;
-      border-bottom: 1px solid vars.$bg-border-muted;
     }
 
     &--logo {

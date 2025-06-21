@@ -7,12 +7,12 @@
 //= include modules/inputsCount.js
 //= include modules/viewMode.js
 //= include modules/numInput.js
+//= include modules/mobileMenuBtn.js
 
-document.addEventListener("DOMContentLoaded", function () {
-  if (typeof numbersInput === "function") {
-    numbersInput(".input-numbers-only");
-  }
-});
+if (typeof mobileMenuBtn === "function") mobileMenuBtn();
+if (typeof numbersInput === "function") {
+  numbersInput(".input-numbers-only");
+}
 if (typeof viewMode === "function") viewMode();
 if (typeof inputsCount === "function") inputsCount();
 if (typeof rangeSlider === "function") rangeSlider();
