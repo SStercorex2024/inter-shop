@@ -134,7 +134,6 @@ function styles() {
 
 function scripts() {
   return src([
-    "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
     "node_modules/nouislider/dist/nouislider.min.js",
     "node_modules/swiper/swiper-bundle.js",
     "app/js/main.js",
