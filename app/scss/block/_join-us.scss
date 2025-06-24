@@ -32,7 +32,9 @@
       color: vars.$color-focus;
     }
   }
-
+  &__img {
+    max-width: fit-content;
+  }
   &__input + .join-us__input {
     margin-top: 20px;
   }
