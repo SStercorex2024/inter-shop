@@ -3,18 +3,19 @@
 <!--=include head.html -->
 
 <body>
-    <!--=include header.html -->
-    <main class="main">
-        <section class="reviews">
-            <div class="reviews-top">
-                <h2 class="reviews-top__title">
-                    Customer Reviews
-                </h2>
-                <a class="reviews-top__link" href="#">
-                    Publication rules
-                </a>
-            </div>
-            <div class="container-big">
+<!--=include header.html -->
+<main class="main">
+    <section class="reviews">
+        <div class="reviews-top">
+            <h2 class="reviews-top__title">
+                Customer Reviews
+            </h2>
+            <a class="reviews-top__link" href="#">
+                Publication rules
+            </a>
+        </div>
+        <div class="container-big">
+            <div class="reviews__block-slider">
                 <div class="reviews__slider">
                     <div class="reviews__slider-wrapper swiper-wrapper">
                         <!--=include rendered/reviews-slider-cards.html -->
@@ -34,43 +35,43 @@
                         </div>
                     </div>
                 </div>
-                <div class="reviews__rating">
+            </div>
+            <div class="reviews__rating">
                     <span class="reviews__rating-number">
                         4.9
                     </span>
-                    <div class="reviews__rating-stars">
-                        <svg width="24" height="24">
-                            <use xlink:href="img/sprite.svg#star-full"></use>
-                        </svg>
-                        <svg width="24" height="24">
-                            <use xlink:href="img/sprite.svg#star-full"></use>
-                        </svg>
-                        <svg width="24" height="24">
-                            <use xlink:href="img/sprite.svg#star-full"></use>
-                        </svg>
-                        <svg width="24" height="24">
-                            <use xlink:href="img/sprite.svg#star-full"></use>
-                        </svg>
-                        <svg width="24" height="24">
-                            <use xlink:href="img/sprite.svg#star-full"></use>
-                        </svg>
-                    </div>
-                    <p class="reviews__rating-all">
-                        458 ratings
-                    </p>
+                <div class="reviews__rating-stars">
+                    <svg width="24" height="24">
+                        <use xlink:href="img/sprite.svg#star-full"></use>
+                    </svg>
+                    <svg width="24" height="24">
+                        <use xlink:href="img/sprite.svg#star-full"></use>
+                    </svg>
+                    <svg width="24" height="24">
+                        <use xlink:href="img/sprite.svg#star-full"></use>
+                    </svg>
+                    <svg width="24" height="24">
+                        <use xlink:href="img/sprite.svg#star-full"></use>
+                    </svg>
+                    <svg width="24" height="24">
+                        <use xlink:href="img/sprite.svg#star-full"></use>
+                    </svg>
                 </div>
-                <a class="reviews__add btn" href="#">
-                    Add a review </a>
-                <div class="reviews-cards">
-                    <!--=include rendered/reviews-cards.html -->
-                </div>
+                <p class="reviews__rating-all">
+                    458 ratings
+                </p>
             </div>
-        </section>
-    </main>
-
-    <!--=include footer.html -->
-</body>
+            <a class="reviews__add btn" href="#">
+                Add a review </a>
+            <div class="reviews-cards">
+                <!--=include rendered/reviews-cards.html -->
+            </div>
+        </div>
+    </section>
+</main>
+<!--=include footer.html -->
 <script type="module" src="js/main.min.js"></script>
+</body>
 
 
 </html>

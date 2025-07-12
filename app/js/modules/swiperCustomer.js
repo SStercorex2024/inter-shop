@@ -1,17 +1,13 @@
 function swiperCustomer() {
   const swiper = new Swiper(".reviews__slider", {
-    grabCursor: true,
+    // grabCursor: true,
+    // centeredSlides: true,
 
-    slidesPerView: 8.5,
-    centeredSlides: true,
-
-    spaceBetween: 16,
     loop: true,
     pagination: {
       el: ".reviews__slider-pagination",
       type: "fraction",
     },
-
     navigation: {
       nextEl: ".reviews__slider-next",
       prevEl: ".reviews__slider-prev",
@@ -20,5 +16,20 @@ function swiperCustomer() {
       delay: 3000,
       disableOnInteraction: false,
     },
+    breakpoints: {
+      360: {
+        spaceBetween: 10,
+        slidesPerView: 2,
+      },
+      768: {
+        spaceBetween: 16,
+        slidesPerView: 4,
+      },
+      1000: {
+        spaceBetween: 16,
+        slidesPerView: 8,
+      },
+
+    }
   });
 }

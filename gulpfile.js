@@ -1,4 +1,4 @@
-const { src, dest, watch, series, parallel } = require("gulp");
+const {src, dest, watch, series, parallel} = require("gulp");
 
 const browserSync = require("browser-sync").create();
 const scss = require("gulp-sass")(require("sass"));
@@ -30,52 +30,52 @@ function nunjucks(done) {
   }
 
   return src(`${njkFolder}/*.njk`)
-    .pipe(plumber())
-    .pipe(
-      gulpData((file) => {
-        const fileName = path.basename(file.path, ".njk");
-        const globalDataPath = "app/data/global.json";
-        const pageDataPath = `app/data/${fileName}.json`;
+  .pipe(plumber())
+  .pipe(
+    gulpData((file) => {
+      const fileName = path.basename(file.path, ".njk");
+      const globalDataPath = "app/data/global.json";
+      const pageDataPath = `app/data/${fileName}.json`;
 
-        const globalData = fs.existsSync(globalDataPath)
-          ? JSON.parse(fs.readFileSync(globalDataPath))
-          : {};
-        const pageData = fs.existsSync(pageDataPath)
-          ? JSON.parse(fs.readFileSync(pageDataPath))
-          : {};
+      const globalData = fs.existsSync(globalDataPath)
+        ? JSON.parse(fs.readFileSync(globalDataPath))
+        : {};
+      const pageData = fs.existsSync(pageDataPath)
+        ? JSON.parse(fs.readFileSync(pageDataPath))
+        : {};
 
-        return Object.assign({}, globalData, pageData);
-      })
-    )
-    .pipe(
-      nunjucksRender({
-        path: ["app/templates"],
-      })
-    )
-    .pipe(dest("app/components/rendered"))
-    .pipe(browserSync.stream());
+      return Object.assign({}, globalData, pageData);
+    })
+  )
+  .pipe(
+    nunjucksRender({
+      path: ["app/templates"],
+    })
+  )
+  .pipe(dest("app/components/rendered"))
+  .pipe(browserSync.stream());
 }
 
 function sprites() {
   return src("app/img/src/sprite/*.svg")
-    .pipe(
-      svgstore({
-        inlineSvg: true,
-        fileName: "sprite.svg",
-      })
-    )
-    .pipe(dest("app/img"));
+  .pipe(
+    svgstore({
+      inlineSvg: true,
+      fileName: "sprite.svg",
+    })
+  )
+  .pipe(dest("app/img"));
 }
 
 function pages() {
   return src("app/pages/*.html")
-    .pipe(
-      include({
-        includePaths: "app/components",
-      })
-    )
-    .pipe(dest("app"))
-    .pipe(browserSync.stream());
+  .pipe(
+    include({
+      includePaths: "app/components",
+    })
+  )
+  .pipe(dest("app"))
+  .pipe(browserSync.stream());
 }
 
 function fonts() {
@@ -86,50 +86,37 @@ function images() {
   const source = "app/img/src/**/*.{jpg,jpeg,png}";
   const destination = "app/img";
 
-  const jpegOutput = src(source, { base: "app/img/src" })
-    .pipe(plumber())
-    .pipe(newer({ dest: destination, ext: ".jpg" }))
-    .pipe(imagemin([imagemin.mozjpeg({ quality: 85, progressive: true })]))
-    .pipe(rename({ extname: ".jpg" }))
-    .pipe(dest(destination));
+  const jpegOutput = src(source, {base: "app/img/src"})
+  .pipe(plumber())
+  .pipe(newer({dest: destination, ext: ".jpg"}))
+  .pipe(imagemin([imagemin.mozjpeg({quality: 85, progressive: true})]))
+  .pipe(rename({extname: ".jpg"}))
+  .pipe(dest(destination));
 
-  const avifOutput = src(source, { base: "app/img/src" })
-    .pipe(plumber())
-    .pipe(newer({ dest: destination, ext: ".avif" }))
-    .pipe(avif({ quality: 75 }))
-    .pipe(dest(destination));
+  const avifOutput = src(source, {base: "app/img/src"})
+  .pipe(plumber())
+  .pipe(newer({dest: destination, ext: ".avif"}))
+  .pipe(avif({quality: 75}))
+  .pipe(dest(destination));
 
-  const webpOutput = src(source, { base: "app/img/src" })
-    .pipe(plumber())
-    .pipe(newer({ dest: destination, ext: ".webp" }))
-    .pipe(webp({ quality: 85 }))
-    .pipe(dest(destination));
+  const webpOutput = src(source, {base: "app/img/src"})
+  .pipe(plumber())
+  .pipe(newer({dest: destination, ext: ".webp"}))
+  .pipe(webp({quality: 85}))
+  .pipe(dest(destination));
 
   return merge(jpegOutput, avifOutput, webpOutput);
 }
 
 function styles() {
   return src("app/scss/*.scss")
-    .pipe(scss({ outputStyle: "compressed" })) // Сначала компиляция SCSS в CSS
-    .pipe(
-      autoprefixer({ overrideBrowserslist: ["last 10 versions"], grid: true })
-    ) // Потом автопрефиксер
-    .pipe(
-      postcss([
-        pxtorem({
-          rootValue: 16, // Базовый размер шрифта
-          unitPrecision: 5,
-          propList: ["*"], // Преобразовывать все свойства
-          selectorBlackList: [], // Селекторы, которые нужно исключить
-          replace: true,
-          mediaQuery: false,
-          minPixelValue: 0,
-        }),
-      ])
-    )
-    .pipe(concat("style.min.css")) // Потом объединение
-    .pipe(dest("app/css"))
-    .pipe(browserSync.stream());
+  .pipe(scss({outputStyle: "compressed"})) // Сначала компиляция SCSS в CSS
+  .pipe(
+    autoprefixer({overrideBrowserslist: ["last 10 versions"], grid: true})
+  ) // Потом автопрефиксер
+  .pipe(concat("style.min.css")) // Потом объединение
+  .pipe(dest("app/css"))
+  .pipe(browserSync.stream());
 }
 
 function scripts() {
@@ -138,13 +125,32 @@ function scripts() {
     "node_modules/swiper/swiper-bundle.js",
     "app/js/main.js",
   ])
-    .pipe(plumber())
-    .pipe(include())
-    .on("error", console.log)
-    .pipe(concat("main.min.js"))
-    .pipe(uglify())
-    .pipe(dest("app/js"))
-    .pipe(browserSync.stream());
+  .pipe(plumber())
+  .pipe(include())
+  .on("error", console.log)
+  .pipe(concat("main.min.js"))
+  .pipe(uglify())
+  .pipe(dest("app/js"))
+  .pipe(browserSync.stream());
+}
+
+function stylesProd() {
+  return src("app/scss/*.scss")
+  .pipe(scss({outputStyle: "compressed"}))
+  .pipe(autoprefixer({overrideBrowserslist: ["last 10 versions"], grid: true}))
+  .pipe(postcss([
+    pxtorem({
+      rootValue: 16,
+      unitPrecision: 5,
+      propList: ["*"],
+      selectorBlackList: [],
+      replace: true,
+      mediaQuery: false,
+      minPixelValue: 0,
+    })
+  ]))
+  .pipe(concat("style.min.css"))
+  .pipe(dest("app/css"));
 }
 
 function watching() {
@@ -176,7 +182,7 @@ function building() {
       "app/js/main.min.js",
       "app/index.html",
     ],
-    { base: "app" }
+    {base: "app"}
   ).pipe(dest("dist"));
 }
 
@@ -195,7 +201,7 @@ exports.building = building;
 exports.cleanDist = cleanDist;
 exports.nunjucks = nunjucks;
 
-exports.build = series(cleanDist, building);
+exports.build = series(cleanDist, stylesProd, building);
 exports.default = parallel(
   styles,
   scripts,
