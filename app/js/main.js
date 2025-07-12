@@ -8,7 +8,11 @@
 //= include modules/viewMode.js
 //= include modules/numInput.js
 //= include modules/mobileMenuBtn.js
-
+//= include modules/clickForWidthOnImgReviews.js
+//= include modules/blogChangeGridToLine.js
+//
+// if (typeof blogChangeGridToLine === "function") blogChangeGridToLine()
+if (typeof clickForWidthOnImgReviews === "function") clickForWidthOnImgReviews()
 if (typeof mobileMenuBtn === "function") mobileMenuBtn();
 if (typeof numbersInput === "function") {
   numbersInput(".input-numbers-only");
@@ -22,35 +26,30 @@ if (typeof initSanitize === "function") initSanitize();
 if (typeof likeBtn === "function") likeBtn();
 if (typeof linkActive === "function") linkActive();
 
-// тимчасово функція в мейі.
+const blogChangeGridToLine = () => {
+  const btns = document.querySelector('.blog__btns')
+  const cards = document.querySelector('.blog__cards')
+  const btnLine = document.querySelector('.view-mode__btn--line')
+  const btnGrid = document.querySelector('.view-mode__btn--grid')
 
-function viewMode() {
-  const gridBtn = document.querySelector(".view-mode__btn--grid");
-  const lineBtn = document.querySelector(".view-mode__btn--line");
-  const cardsContainer = document.querySelector(".view-mode__cards");
-  const viewBtns = document.querySelectorAll(".view-mode__btn-wrapper");
+  btns.addEventListener('click', (click) => {
+    const target = click.target.closest('.blog__btn')
 
-  if (!gridBtn || !lineBtn || !cardsContainer) return;
-
-  const toggleView = (mode) => {
-    cardsContainer.classList.toggle("view-mode__cards--grid", mode === "grid");
-    cardsContainer.classList.toggle("view-mode__cards--line", mode === "line");
-
-    viewBtns.forEach((btn) =>
-      btn.classList.remove("view-mode__btn-wrapper--active")
-    );
-
-    if (mode === "grid") {
-      gridBtn
-        .closest(".view-mode__btn-wrapper")
-        .classList.add("view-mode__btn-wrapper--active");
-    } else {
-      lineBtn
-        .closest(".view-mode__btn-wrapper")
-        .classList.add("view-mode__btn-wrapper--active");
+    if (target.classList.contains('blog__btn')) {
+      if (target === btnGrid) {
+        btnGrid.classList.add('active')
+        btnLine.classList.remove('active')
+        cards.classList.remove('view-mode__cards--line')
+        cards.classList.add('view-mode__cards--grid')
+      }
+      if (target === btnLine) {
+        btnLine.classList.add('active')
+        btnGrid.classList.remove('active')
+        cards.classList.remove('view-mode__cards--grid')
+        cards.classList.add('view-mode__cards--line')
+      }
     }
-  };
-
-  gridBtn.addEventListener("click", () => toggleView("grid"));
-  lineBtn.addEventListener("click", () => toggleView("line"));
+  })
 }
+
+if (typeof clickForWidthOnImgReviews === "function") blogChangeGridToLine()

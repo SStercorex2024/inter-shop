@@ -1,4 +1,4 @@
-function viewMode() {
+const viewMode = () => {
   const gridBtn = document.querySelector(".view-mode__btn--grid");
   const lineBtn = document.querySelector(".view-mode__btn--line");
   const cardsContainer = document.querySelector(".view-mode__cards");
@@ -16,16 +16,14 @@ function viewMode() {
 
     if (mode === "grid") {
       gridBtn
-        .closest(".view-mode__btn-wrapper")
-        .classList.add("view-mode__btn-wrapper--active");
+      .closest(".view-mode__btn-wrapper")
+      .classList.add("view-mode__btn-wrapper--active");
     } else {
       lineBtn
-        .closest(".view-mode__btn-wrapper")
-        .classList.add("view-mode__btn-wrapper--active");
+      .closest(".view-mode__btn-wrapper")
+      .classList.add("view-mode__btn-wrapper--active");
     }
   };
-
   gridBtn.addEventListener("click", () => toggleView("grid"));
   lineBtn.addEventListener("click", () => toggleView("line"));
 }
-

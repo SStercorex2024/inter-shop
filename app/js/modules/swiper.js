@@ -1,3 +1,5 @@
+import Swiper from "swiper";
+
 function swiperInit() {
   const swiper = new Swiper(".accessories__slider", {
     slidesPerView: 3,

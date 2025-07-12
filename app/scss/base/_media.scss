@@ -1,6 +1,27 @@
 @use "../base/vars";
 @use "../base/mixins";
 
+@media (max-width: 1550px) {
+  .reviews__block-slider {
+    overflow: hidden;
+  }
+  .blog__top-title {
+    font-size: 40px;
+  }
+  .blog__top-description {
+    font-size: 20px;
+  }
+  .blog__top-link {
+    padding: 16px 32px;
+  }
+  .view-mode__cards--line .categories__img {
+    min-width: 365px;
+  }
+  .blog-one h1 {
+    font-size: 64px;
+  }
+}
+
 @media (max-width: 1200px) {
   .hero {
     background-position: top center;
@@ -33,6 +54,12 @@
   .new-collection__caption {
     width: 192px;
     padding: 27px 0 0 20px;
+  }
+  .blog__top {
+    column-gap: 20px;
+  }
+  .blog__top-img {
+    width: 600px;
   }
 }
 
@@ -100,6 +127,35 @@
     &.grid {
       column-gap: 20px;
     }
+  }
+  .blog__top {
+    flex-direction: column;
+    row-gap: 20px;
+  }
+  .blog__top-img {
+    min-width: 100%;
+    object-fit: cover;
+    height: 45vh;
+  }
+  .blog__nav-boxright .search {
+    margin-right: 0;
+  }
+  .blog__top-rightbox {
+    margin-right: 20px;
+  }
+  .view-mode__cards--line .categories__img {
+    min-width: 350px;
+  }
+  .categories__item {
+    position: relative;
+  }
+  .categories__date {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+  .blog-one h3 {
+    font-size: 26px;
   }
 }
 
@@ -216,6 +272,33 @@
     height: 583px;
     object-fit: cover;
   }
+  .reviews-top {
+    flex-direction: column;
+    row-gap: 20px;
+  }
+  .categories__title {
+    font-size: 20px;
+    margin-inline: 10px;
+  }
+  .view-mode__cards--line .categories__img {
+    min-width: 250px;
+  }
+  .blog__cards.view-mode__cards--grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .categories__item picture {
+    align-self: center;
+  }
+  .blog__nav {
+    flex-wrap: wrap;
+    padding-block: 16px;
+  }
+  .blog__nav-title {
+    margin-bottom: 10px;
+  }
+  .blog-one h1 {
+    font-size: 44px;
+  }
 }
 
 @media (max-width: 680px) {
@@ -318,6 +401,104 @@
   .appointment__wrapper {
     padding-bottom: 70px;
   }
+  .reviews-top__title {
+    font-size: 45px;
+    row-gap: 30px;
+  }
+  .reviews-top__link {
+    font-size: 20px;
+    align-self: end;
+  }
+  .reviews__add {
+    padding: 12px 20px;
+  }
+  .reviews__rating {
+    flex-direction: column;
+    align-items: start;
+  }
+  .blog__btns {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    translate: 0 50%;
+  }
+  .blog__nav {
+    position: relative;
+  }
+  .blog__nav-title {
+    width: 100%;
+  }
+  .select__wrapper .select {
+    margin-right: 0;
+  }
+  .blog__nav-boxright {
+    flex-direction: column;
+    row-gap: 15px;
+    margin-top: 10px;
+  }
+  .container-big .view-mode__cards--line .categories__item .categories__name {
+    margin: 5px 5px auto 5px;
+  }
+  .blog-one h1 {
+    text-align: center;
+  }
+  .blog-one picture {
+    margin-block: 10px;
+  }
+  .blog-one picture:first-of-type {
+    padding-block: 20px;
+    margin-bottom: 20px;
+  }
+  .blog-one h3:first-of-type {
+    margin-bottom: 20px;
+  }
+  .blog-one h3 {
+    margin-top: 20px;
+  }
+  .blog-one h3:last-of-type {
+    margin-bottom: 20px;
+  }
+  .blog-one__stats {
+    margin-left: 20px;
+  }
+  .blog-one__row {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 550px) {
+  .blog__top-title {
+    font-size: 24px;
+  }
+  .blog__top-description {
+    font-size: 16px;
+  }
+  .blog__top-link {
+    font-size: 20px;
+  }
+  .blog__cards.view-mode__cards--grid {
+    grid-template-columns: 1fr;
+  }
+  .blog .view-mode__cards--line .categories__item .categories__title {
+    margin-right: 0;
+    margin-left: 5px;
+    font-size: 16px;
+  }
+  .blog .view-mode__cards--line .categories__item .categories__name {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 4px 16px;
+  }
+  .blog .view-mode__cards--line .categories__item .categories__date {
+    margin-right: 0;
+  }
+  .view-mode__cards--line .categories__img {
+    min-width: 200px;
+  }
+  .blog-one h3 {
+    font-size: 22px;
+  }
 }
 
 @media (max-width: 400px) {
@@ -407,26 +588,26 @@
       max-width: 162px;
     }
   }
-  .appointment__title{
+  .appointment__title {
     font-size: 20px;
   }
-  .appointment__wrapper{
+  .appointment__wrapper {
     padding-bottom: 40px;
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
     justify-content: center;
   }
-  .appointment__img{
+  .appointment__img {
     width: 339px;
     height: 250px;
     margin-bottom: 30px;
   }
-  .appointment__form-title{
+  .appointment__form-title {
     text-align: center;
     max-width: 220px;
   }
-  .appointment__btn{
+  .appointment__btn {
     margin-top: 30px;
   }
 }
