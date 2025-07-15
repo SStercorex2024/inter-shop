@@ -2,6 +2,14 @@ const swiper = new Swiper('.swiper', {
   loop: true,
 });
 
+const onlyNumbers = (string) => {
+  return Number(string.replace(/[^0-9]/g, ''))
+}
+
+const sanitizeInput = (string) => {
+  return string.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
 const clickForWidthOnImgReviews = () => {
   const imgs = document.querySelectorAll('.reviews-card__img');
 
@@ -135,10 +143,6 @@ const rangeSlider = () => {
       });
     });
   }
-}
-
-const sanitizeInput = (str) => {
-  return str.replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
 
 const initSanitize = () => {
@@ -277,6 +281,88 @@ const blogChangeGridToLine = () => {
   });
 }
 
+const modalCheckout = () => {
+  // const showModal = document.getElementById('showModal')
+  // const btn = document.getElementById('closePop')
+  const mainBlock = document.querySelector('.checkout__details')
+  const popUp = document.querySelector('.checkout__details-bag')
+
+  mainBlock.addEventListener('click', e => {
+    if (e.target.closest('#showModal')) {
+      popUp.classList.add('active')
+    }
+    if (e.target.closest('#closePop')) {
+      popUp.classList.remove('active')
+    }
+  })
+}
+
+const activeStyleCheckoutInfoRadio = () => {
+  const radioInputs = document.querySelectorAll('.radio-box')
+
+  radioInputs.forEach(input => {
+    input.addEventListener('change', (e) => {
+      document.querySelectorAll('.checkout__info-radio').forEach(block => {
+        block.classList.remove('checkout__info-radio--active')
+      })
+
+      const parent = input.closest('.checkout__info-radio')
+      if (input.checked && parent) {
+        parent.classList.add('checkout__info-radio--active')
+      }
+    })
+  })
+}
+
+const checkoutDeleteItem = () => {
+  const boxItems = document.querySelector('.checkout__details-items')
+  boxItems.addEventListener('click', (event) => {
+    const btnDel = event.target.closest('.checkout__card-delete')
+
+    if (btnDel) {
+      const item = btnDel.closest('.checkout__details-item')
+      if (item) {
+        item.remove()
+      }
+    }
+  })
+}
+
+
+const counterPrice = () => {
+  const priceCounterEl = document.getElementById('priceCounter');
+  const priceSubCounterEl = document.getElementById('priceSubCounter');
+  const cardItems = document.querySelector('.checkout__details-bag')
+
+  cardItems.addEventListener('click', (event) => {
+    const deleteBtn = event.target.closest('.checkout__card-delete');
+    if (!deleteBtn) return;
+
+    const itemBlock = event.target.closest('.checkout__details-item')
+    if (!itemBlock) return
+
+    const priceEl = itemBlock.querySelector('.counter-price-item')
+    if (!priceEl) return
+
+    const priceItem = onlyNumbers(priceEl.textContent)
+    const priceCounter = onlyNumbers(priceCounterEl.textContent)
+    const priceCounterSubtotal = onlyNumbers(priceSubCounterEl.textContent)
+
+    const newPriceCounter = priceCounter - priceItem
+    const newPriceSubCounter = priceCounterSubtotal - priceItem
+
+    if (priceItem) {
+      priceCounterEl.textContent = `£${newPriceCounter.toLocaleString()}`;
+      priceSubCounterEl.textContent = `£${newPriceSubCounter.toLocaleString()}`;
+    }
+  })
+}
+
+
+if (typeof counterPrice === "function") counterPrice()
+if (typeof checkoutDeleteItem === "function") checkoutDeleteItem()
+if (typeof activeStyleCheckoutInfoRadio === "function") activeStyleCheckoutInfoRadio()
+if (typeof modalCheckout === "function") modalCheckout()
 if (typeof blogChangeGridToLine === "function") blogChangeGridToLine()
 if (typeof clickForWidthOnImgReviews === "function") clickForWidthOnImgReviews()
 if (typeof mobileMenuBtn === "function") mobileMenuBtn();
