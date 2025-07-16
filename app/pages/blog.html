@@ -4,89 +4,99 @@
 <body>
 <!--=include header.html -->
 <main class="blog">
-    <section class="blog__header">
-        <div class="container-big">
-            <article class="blog__top">
-                <picture>
-                    <source srcset="img/blog/blog-1.avif" type="image/avif">
-                    <source srcset="img/blog/blog-1.webp" type="image/webp">
-                    <img class="blog__top-img" src="img/blog/blog-1.jpg" alt="Alt text" loading="lazy">
-                </picture>
-                <div class="blog__top-rightbox">
-                    <a class="blog__top-category" href="#">
-                        Wedding
-                    </a>
-                    <h2 class="blog__top-title">
-                        <a href="#">
-                            The Perfect Wedding: How to&nbsp;Create Magic Without Losing Your Mind
-                        </a>
-                    </h2>
-                    <div class="blog__top-description">
-                        A&nbsp;wedding is&nbsp;more than just a&nbsp;day&nbsp;&mdash; it&rsquo;s a&nbsp;love story told
-                        through
-                        every detail, from the dress and d&eacute;cor to&nbsp;the music and emotions. This article
-                        shares
-                        inspiration, practical tips, and stress-free strategies to&nbsp;help you plan a&nbsp;truly
-                        unforgettable
-                        celebration while staying calm and joyful every step of&nbsp;the way.
-                    </div>
-                    <a class="blog__top-link btn" href="#">
-                        Read the article
-                    </a>
-                </div>
-            </article>
+  <section class="blog__header">
+    <div class="container-big">
+      <article class="blog__top">
+        <picture>
+          <source srcset="img/blog/blog-1.avif" type="image/avif">
+          <source srcset="img/blog/blog-1.webp" type="image/webp">
+          <img
+            class="blog__top-img"
+            src="img/blog/blog-1.jpg"
+            alt="Alt text"
+            loading="lazy"
+          >
+        </picture>
+        <div class="blog__top-rightbox">
+          <a class="blog__top-category" href="#">
+            Wedding
+          </a>
+          <h2 class="blog__top-title">
+            <a href="#">
+              The Perfect Wedding: How to&nbsp;Create Magic Without Losing Your
+              Mind
+            </a>
+          </h2>
+          <div class="blog__top-description">
+            A&nbsp;wedding is&nbsp;more than just a&nbsp;day&nbsp;&mdash; it&rsquo;s
+            a&nbsp;love story told
+            through
+            every detail, from the dress and d&eacute;cor to&nbsp;the music and
+            emotions. This article
+            shares
+            inspiration, practical tips, and stress-free strategies to&nbsp;help
+            you plan a&nbsp;truly
+            unforgettable
+            celebration while staying calm and joyful every step of&nbsp;the
+            way.
+          </div>
+          <a class="blog__top-link btn" href="#">
+            Read the article
+          </a>
         </div>
-    </section>
-    <section class="blog__categories">
-        <h2 class="visually-hidden">Blog Articles</h2>
-        <div class="container-big">
-            <nav class="blog__nav" aria-label="Blog categories and filters">
-                <p class="blog__nav-title">
-                    Latest news
-                </p>
-                <div class="blog__nav-boxright">
-                    <form class="categories__form">
-                        <div class="select__wrapper">
-                            <select name="categories" class="select">
-                                <option disabled selected>Categories</option>
-                                <option value="Wedding">Wedding</option>
-                                <option value="Wedding Dress">Wedding Dress</option>
-                                <option value="Rings">Rings</option>
-                                <option value="Business">Business</option>
-                            </select>
-                        </div>
-                    </form>
-                    <search class="search">
-                        <input class="search__input" type="search" placeholder="search">
-                        <button class="search__btn btn"></button>
-                    </search>
-                    <ul class="blog__btns">
-                        <li class="blog__btns-item view-mode__btn-wrapper view-mode__btn-wrapper--active">
-                            <button class="blog__btn view-mode__btn--grid active">
-                                <svg width="40" height="40">
-                                    <use xlink:href="img/sprite.svg#blog-grid"></use>
-                                </svg>
-                            </button>
-                        </li>
-                        <li class="blog__btns-item view-mode__btn-wrapper">
-                            <button class="blog__btn view-mode__btn--line">
-                                <svg width="40" height="40">
-                                    <use xlink:href="img/sprite.svg#blog-list"></use>
-                                </svg>
-                            </button>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-            <div class="blog__cards view-mode__cards view-mode__cards--grid ">
-                <!--=include rendered/categories.html -->
+      </article>
+    </div>
+  </section>
+  <section class="blog__categories">
+    <h2 class="visually-hidden">Blog Articles</h2>
+    <div class="container-big">
+      <nav class="blog__nav" aria-label="Blog categories and filters">
+        <p class="blog__nav-title">
+          Latest news
+        </p>
+        <div class="blog__nav-boxright">
+          <form class="categories__form">
+            <div class="select__wrapper">
+              <select name="categories" class="select">
+                <option disabled selected>Categories</option>
+                <option value="Wedding">Wedding</option>
+                <option value="Wedding Dress">Wedding Dress</option>
+                <option value="Rings">Rings</option>
+                <option value="Business">Business</option>
+              </select>
             </div>
+          </form>
+          <search class="search">
+            <input class="search__input" type="search" placeholder="search">
+            <button class="search__btn btn"></button>
+          </search>
+          <ul class="blog__btns">
+            <li class="blog__btns-item view-mode__btn-wrapper view-mode__btn-wrapper--active">
+              <button class="blog__btn view-mode__btn--grid active">
+                <svg width="40" height="40">
+                  <use xlink:href="img/sprite.svg#blog-grid"></use>
+                </svg>
+              </button>
+            </li>
+            <li class="blog__btns-item view-mode__btn-wrapper">
+              <button class="blog__btn view-mode__btn--line">
+                <svg width="40" height="40">
+                  <use xlink:href="img/sprite.svg#blog-list"></use>
+                </svg>
+              </button>
+            </li>
+          </ul>
         </div>
-        <!--=include templates/pagination-collections.html -->
-    </section>
+      </nav>
+      <div class="blog__cards view-mode__cards view-mode__cards--grid ">
+        <!--=include rendered/categories.html -->
+      </div>
+    </div>
+    <!--=include templates/pagination-collections.html -->
+  </section>
 </main>
 <!--=include footer.html -->
-<script src="js/main.js"></script>
+<script src="js/main.min.js"></script>
 </body>
 
 </html>

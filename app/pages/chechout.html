@@ -235,7 +235,7 @@
           </button>
         </div>
         <!--checkout__info END-->
-        <div class="checkout__details">
+        <div class="checkout__details modal-block">
           <div class="checkout__details-wrapper">
             <p class="checkout__details-title">
               Order details
@@ -249,119 +249,8 @@
             </button>
           </div>
           <!--checkout__details-bag START-->
-          <div class="checkout__details-bag">
-            <div class="checkout__details-row">
-              <p class="checkout__details-desc">
-                2 items in bag
-              </p>
-              <button
-                class="btn checkout__details-cleanall"
-                id="closePop"
-                type="button"
-              >
-                <svg width="40" height="40">
-                  <use xlink:href="img/sprite.svg#clean-all"></use>
-                </svg>
-              </button>
-            </div>
-            <div class="checkout__details-items">
-              <!--checkout__details-item START-->
-              <div class="checkout__details-item">
-                <picture>
-                  <source srcset="img/checkout/order-1.avif" type="image/avif">
-                  <source srcset="img/checkout/order-1.webp" type="image/webp">
-                  <img
-                    class="checkout__card-img"
-                    src="img/checkout/order-1.jpg"
-                    alt="Alt text"
-                  >
-                </picture>
-                <div class="checkout__card-details">
-                  <div class="checkout__card-row">
-                    <p class="checkout__card-title">
-                      NAOMI
-                    </p>
-                    <button class="btn checkout__card-delete" type="button">
-                      <svg width="20" height="20">
-                        <use xlink:href="img/sprite.svg#trash"></use>
-                      </svg>
-                    </button>
-                  </div>
-                  <p class="checkout__card-size">
-                    <b>SIZE:</b>S
-                  </p>
-                  <p class="checkout__card-color">
-                    <b>COLOR:</b>IVORY
-                  </p>
-                  <div class="checkout__card-row">
-                    <p class="checkout__card-desc">Item subtotal:</p>
-                    <p class="checkout__card-desc counter-price-item">€ 2,600</p>
-                  </div>
-                </div>
-              </div>
-              <!--checkout__details-item END-->
-              <!--checkout__details-item START-->
-              <div class="checkout__details-item">
-                <picture>
-                  <source srcset="img/checkout/order-2.avif" type="image/avif">
-                  <source srcset="img/checkout/order-2.webp" type="image/webp">
-                  <img
-                    class="checkout__card-img"
-                    src="img/checkout/order-2.jpg"
-                    alt="Alt text"
-                  >
-                </picture>
-                <div class="checkout__card-details">
-                  <div class="checkout__card-row">
-                    <p class="checkout__card-title">
-                      SABINE
-                    </p>
-                    <button class="btn checkout__card-delete" type="button">
-                      <svg width="20" height="20">
-                        <use xlink:href="img/sprite.svg#trash"></use>
-                      </svg>
-                    </button>
-                  </div>
-                  <p class="checkout__card-size">
-                    <b>SIZE:</b>38
-                  </p>
-                  <p class="checkout__card-color">
-                    <b>COLOR:</b>IVORY
-                  </p>
-                  <div class="checkout__card-row">
-                    <p class="checkout__card-desc">Item subtotal:</p>
-                    <p class="checkout__card-desc counter-price-item">€ 200</p>
-                  </div>
-                </div>
-              </div>
-              <!--checkout__details-item END-->
-            </div>
-            <!--checkout__details-bag END-->
-            <!--checkout__order START-->
-            <div class="checkout__order">
-              <p class="checkout__order-title">
-                Your order
-              </p>
-              <dl class="checkout__order-pricewrap">
-                <dt class="checkout__order-subtotal">
-                  Subtotal:
-                </dt>
-                <dd class="checkout__order-numbers" id="priceSubCounter">€2,800</dd>
-                <dt class="checkout__order-subtotal">
-                  Shipping:
-                </dt>
-                <dd class="checkout__order-numbers">FREE</dd>
-                <dt class="checkout__order-total">
-                  Total:
-                </dt>
-                <dd class="checkout__order-numbers" id="priceCounter">€ 2,800</dd>
-              </dl>
-              <button class="btn checkout__order-btn" type="submit">Change
-                items
-              </button>
-            </div>
-            <!--checkout__order END-->
-          </div>
+          <!--=include detailsBag/detailsBag.html -->
+          <!--checkout__details-bag END-->
         </div>
       </div>
     </div>

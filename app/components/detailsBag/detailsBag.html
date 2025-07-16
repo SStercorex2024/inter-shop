@@ -1,0 +1,115 @@
+<div class="bag">
+  <div class="bag__row">
+    <div class="bag__counter-item">
+      <span id="bag-counter-items-in-header">2</span> items in bag
+    </div>
+    <button
+      class="btn bag__clear"
+      id="closePop"
+      type="button"
+    >
+      <svg width="40" height="40">
+        <use xlink:href="img/sprite.svg#clean-all"></use>
+      </svg>
+    </button>
+  </div>
+
+  <div class="bag__items">
+    <!-- bag__item START -->
+    <div class="bag__item">
+      <picture>
+        <source srcset="img/checkout/order-1.avif" type="image/avif">
+        <source srcset="img/checkout/order-1.webp" type="image/webp">
+        <img
+          class="bag__item-img"
+          src="img/checkout/order-1.jpg"
+          alt="Alt text"
+        >
+      </picture>
+      <div class="bag__item-details">
+        <div class="bag__item-row">
+          <p class="bag__item-title">
+            NAOMI
+          </p>
+          <button class="btn bag__item-delete" type="button">
+            <svg width="20" height="20">
+              <use xlink:href="img/sprite.svg#trash"></use>
+            </svg>
+          </button>
+        </div>
+        <p class="bag__item-size">
+          <b>SIZE:</b>S
+        </p>
+        <p class="bag__item-color">
+          <b>COLOR:</b>IVORY
+        </p>
+        <div class="bag__item-row">
+          <p class="bag__item-desc">Item subtotal:</p>
+          <p class="bag__item-desc counter-price-item">€ 2,600</p>
+        </div>
+      </div>
+    </div>
+    <!-- bag__item END -->
+
+    <!-- bag__item START -->
+    <div class="bag__item">
+      <picture>
+        <source srcset="img/checkout/order-2.avif" type="image/avif">
+        <source srcset="img/checkout/order-2.webp" type="image/webp">
+        <img
+          class="bag__item-img"
+          src="img/checkout/order-2.jpg"
+          alt="Alt text"
+        >
+      </picture>
+      <div class="bag__item-details">
+        <div class="bag__item-row">
+          <p class="bag__item-title">
+            SABINE
+          </p>
+          <button class="btn bag__item-delete" type="button">
+            <svg width="20" height="20">
+              <use xlink:href="img/sprite.svg#trash"></use>
+            </svg>
+          </button>
+        </div>
+        <p class="bag__item-size">
+          <b>SIZE:</b>38
+        </p>
+        <p class="bag__item-color">
+          <b>COLOR:</b>IVORY
+        </p>
+        <div class="bag__item-row">
+          <p class="bag__item-desc">Item subtotal:</p>
+          <p class="bag__item-desc counter-price-item">€ 200</p>
+        </div>
+      </div>
+    </div>
+    <!-- bag__item END -->
+  </div>
+
+  <!-- bag__order START -->
+  <div class="bag__order">
+    <p class="bag__order-title">
+      Your order
+    </p>
+    <dl class="bag__order-pricewrap">
+      <dt class="bag__order-subtotal">
+        Subtotal:
+      </dt>
+      <dd class="bag__order-numbers" id="priceSubCounter">
+        €2,800
+      </dd>
+      <dt class="bag__order-subtotal">
+        Shipping:
+      </dt>
+      <dd class="bag__order-numbers">FREE</dd>
+      <dt class="bag__order-total">
+        Total:
+      </dt>
+      <dd class="bag__order-numbers" id="priceCounter">€ 2,800</dd>
+    </dl>
+    <button class="btn bag__order-btn" type="submit">Change items</button>
+  </div>
+  <!-- bag__order END -->
+</div>

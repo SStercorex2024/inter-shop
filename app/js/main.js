@@ -13,6 +13,8 @@ const sanitizeInput = (string) => {
 const clickForWidthOnImgReviews = () => {
   const imgs = document.querySelectorAll('.reviews-card__img');
 
+  if (!imgs.length) return;
+
   imgs.forEach(img => {
     img.addEventListener('click', () => {
       img.classList.toggle('active');
@@ -22,6 +24,9 @@ const clickForWidthOnImgReviews = () => {
 
 const inputsCount = () => {
   const inputsC = document.querySelectorAll(".range-count");
+
+  if (!inputsC.length) return;
+
   inputsC.forEach((input) => {
     input.addEventListener("keydown", (e) => {
       if (
@@ -70,6 +75,9 @@ const linkActive = () => {
 const mobileMenuBtn = () => {
   const menuBtn = document.querySelector(".menu__btn");
   const menu = document.querySelector(".menu");
+
+  if (!menuBtn || !menu) return;
+
 
   menuBtn.addEventListener("click", () => {
     menu.classList.toggle("menu--active");
@@ -282,18 +290,19 @@ const blogChangeGridToLine = () => {
 }
 
 const modalCheckout = () => {
-  // const showModal = document.getElementById('showModal')
-  // const btn = document.getElementById('closePop')
-  const mainBlock = document.querySelector('.checkout__details')
-  const popUp = document.querySelector('.checkout__details-bag')
+  const mainBlock = document.querySelector('.modal-block')
+  const popUp = document.querySelector('.bag')
+  const closeBtn = document.getElementById('closePop')
+
+  if (!mainBlock || !popUp) return;
 
   mainBlock.addEventListener('click', e => {
     if (e.target.closest('#showModal')) {
       popUp.classList.add('active')
     }
-    if (e.target.closest('#closePop')) {
-      popUp.classList.remove('active')
-    }
+  })
+  closeBtn.addEventListener('click', () => {
+    popUp.classList.remove('active')
   })
 }
 
@@ -314,31 +323,40 @@ const activeStyleCheckoutInfoRadio = () => {
   })
 }
 
-const checkoutDeleteItem = () => {
-  const boxItems = document.querySelector('.checkout__details-items')
+const deleteItemBag = () => {
+  const boxItems = document.querySelector('.bag__items')
+
+  if (!boxItems) return
+
   boxItems.addEventListener('click', (event) => {
-    const btnDel = event.target.closest('.checkout__card-delete')
+    const btnDel = event.target.closest('.bag__item-delete')
+    const counterItems = document.getElementById('bag-counter-items-in-header')
 
     if (btnDel) {
-      const item = btnDel.closest('.checkout__details-item')
-      if (item) {
+      const item = btnDel.closest('.bag__item')
+      if (item && counterItems) {
         item.remove()
+        setTimeout(() => {
+          const newCount = document.querySelectorAll('.bag__item').length
+          counterItems.textContent = newCount.toString()
+        }, 0)
       }
     }
   })
 }
 
-
 const counterPrice = () => {
-  const priceCounterEl = document.getElementById('priceCounter');
-  const priceSubCounterEl = document.getElementById('priceSubCounter');
-  const cardItems = document.querySelector('.checkout__details-bag')
+  const priceCounterEl = document.getElementById('priceCounter')
+  const priceSubCounterEl = document.getElementById('priceSubCounter')
+  const cardItems = document.querySelector('.bag__items')
+
+  if (!cardItems || !priceCounterEl || !priceSubCounterEl) return
 
   cardItems.addEventListener('click', (event) => {
-    const deleteBtn = event.target.closest('.checkout__card-delete');
-    if (!deleteBtn) return;
+    const deleteBtn = event.target.closest('.bag__item-delete')
+    if (!deleteBtn) return
 
-    const itemBlock = event.target.closest('.checkout__details-item')
+    const itemBlock = event.target.closest('.bag__item')
     if (!itemBlock) return
 
     const priceEl = itemBlock.querySelector('.counter-price-item')
@@ -352,28 +370,31 @@ const counterPrice = () => {
     const newPriceSubCounter = priceCounterSubtotal - priceItem
 
     if (priceItem) {
-      priceCounterEl.textContent = `£${newPriceCounter.toLocaleString()}`;
-      priceSubCounterEl.textContent = `£${newPriceSubCounter.toLocaleString()}`;
+      priceCounterEl.textContent = `£${newPriceCounter.toLocaleString()}`
+      priceSubCounterEl.textContent = `£${newPriceSubCounter.toLocaleString()}`
     }
   })
 }
 
 
-if (typeof counterPrice === "function") counterPrice()
-if (typeof checkoutDeleteItem === "function") checkoutDeleteItem()
-if (typeof activeStyleCheckoutInfoRadio === "function") activeStyleCheckoutInfoRadio()
-if (typeof modalCheckout === "function") modalCheckout()
-if (typeof blogChangeGridToLine === "function") blogChangeGridToLine()
-if (typeof clickForWidthOnImgReviews === "function") clickForWidthOnImgReviews()
-if (typeof mobileMenuBtn === "function") mobileMenuBtn();
-if (typeof numbersInput === "function") {
-  numbersInput(".input-numbers-only");
-}
-if (typeof viewMode === "function") viewMode();
-if (typeof inputsCount === "function") inputsCount();
-if (typeof rangeSlider === "function") rangeSlider();
-if (typeof swiperCustomer === "function") swiperCustomer();
-if (typeof swiperInit === "function") swiperInit();
-if (typeof initSanitize === "function") initSanitize();
-if (typeof likeBtn === "function") likeBtn();
-if (typeof linkActive === "function") linkActive();
+document.addEventListener('DOMContentLoaded', () => {
+  if (typeof counterPrice === "function") counterPrice()
+  if (typeof deleteItemBag === "function") deleteItemBag()
+  if (typeof activeStyleCheckoutInfoRadio === "function") activeStyleCheckoutInfoRadio()
+  if (typeof modalCheckout === "function") modalCheckout()
+  if (typeof blogChangeGridToLine === "function") blogChangeGridToLine()
+  if (typeof clickForWidthOnImgReviews === "function") clickForWidthOnImgReviews()
+  if (typeof mobileMenuBtn === "function") mobileMenuBtn();
+  if (typeof numbersInput === "function") {
+    numbersInput(".input-numbers-only");
+  }
+  if (typeof viewMode === "function") viewMode();
+  if (typeof inputsCount === "function") inputsCount();
+  if (typeof rangeSlider === "function") rangeSlider();
+  if (typeof swiperCustomer === "function") swiperCustomer();
+  if (typeof swiperInit === "function") swiperInit();
+  if (typeof initSanitize === "function") initSanitize();
+  if (typeof likeBtn === "function") likeBtn();
+  if (typeof linkActive === "function") linkActive();
+})
+

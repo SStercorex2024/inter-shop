@@ -5,35 +5,70 @@
 <body>
 <!--=include header.html -->
 <main class="main">
-    <section class="container">
-        <h2 class="appointment__title title title--medium">
-            BOOK AN APPOINTMENT
-        </h2>
-        <div class="appointment__wrapper grid grid--2">
-            <form class="appointment__form-box" action="">
-                <img class="appointment__decor" src="img/appointment/appointment-decor.svg" alt="">
-                <p class="appointment__form-title title title--small">
-                    CONTACT INFORMATHION</p>
-                <p class="appointment__form-description">
-                    Fill in your contact details
-                </p>
-                <input class="appointment__input" type="text" placeholder="First name" required>
-                <input class="appointment__input" type="text" placeholder="last name" required>
-                <input class="appointment__input" type="email" placeholder="Email" required>
-                <input class="appointment__input" type="tel" placeholder="Mobile" required>
-                <button class="appointment__btn btn btn--accent" type="appointment__btn" type="submit">SEND</button>
-            </form>
+  <section class="container">
+    <h2 class="appointment__title title title--medium">
+      BOOK AN APPOINTMENT
+    </h2>
+    <div class="appointment__wrapper grid grid--2">
+      <form class="appointment__form-box" action="">
+        <img
+          class="appointment__decor"
+          src="img/appointment/appointment-decor.svg"
+          alt=""
+        >
+        <p class="appointment__form-title title title--small">
+          CONTACT INFORMATHION
+        </p>
+        <p class="appointment__form-description">
+          Fill in your contact details
+        </p>
+        <input
+          class="appointment__input"
+          type="text"
+          placeholder="First name"
+          required
+        >
+        <input
+          class="appointment__input"
+          type="text"
+          placeholder="last name"
+          required
+        >
+        <input
+          class="appointment__input"
+          type="email"
+          placeholder="Email"
+          required
+        >
+        <input
+          class="appointment__input"
+          type="tel"
+          placeholder="Mobile"
+          required
+        >
+        <button
+          class="appointment__btn btn btn--accent"
+          type="appointment__btn"
+          type="submit"
+        >SEND
+        </button>
+      </form>
 
-            <picture>
-                <source srcset="img/appointment/appointment-1.avif" type="image/avif">
-                <source srcset="img/appointment/appointment-1.webp" type="image/webp">
-                <img class="appointment__img" src="img/appointment/appointment-1.jpg" alt="Woman" loading="lazy">
-            </picture>
-        </div>
-    </section>
+      <picture>
+        <source srcset="img/appointment/appointment-1.avif" type="image/avif">
+        <source srcset="img/appointment/appointment-1.webp" type="image/webp">
+        <img
+          class="appointment__img"
+          src="img/appointment/appointment-1.jpg"
+          alt="Woman"
+          loading="lazy"
+        >
+      </picture>
+    </div>
+  </section>
 </main>
 <!--=include footer.html -->
-<script src="js/main.js"></script>
+<script src="js/main.min.js"></script>
 </body>
 
 </html>

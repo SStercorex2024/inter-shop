@@ -3,23 +3,29 @@
 
 .join-us {
   background-color: vars.$bg-border-muted;
+
   &__content {
     padding: 35px 40px 35px 0;
   }
+
   &__title {
     margin-bottom: 20px;
   }
+
   &__text {
     margin-bottom: 40px;
   }
+
   &__description {
     color: vars.$color-primary;
     font-size: 30px;
   }
+
   &__form {
     display: grid;
     row-gap: 20px;
   }
+
   &__input {
     display: inline-block;
     width: 100%;
@@ -32,16 +38,20 @@
       color: vars.$color-focus;
     }
   }
+
   &__img {
     max-width: fit-content;
   }
+
   &__input + .join-us__input {
     margin-top: 20px;
   }
+
   &__btn {
     position: relative;
     z-index: 9;
   }
+
   &__caption {
     font-size: 11px;
     line-height: 1.3;

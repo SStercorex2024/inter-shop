@@ -6,25 +6,30 @@
   background-image: url("../img/our-blog/our-blog-decor.svg");
   background-repeat: no-repeat;
   background-position: left 290px bottom -3px;
+
   &__inner {
     padding-inline: 40px;
     grid-template-columns: 1fr 280px 330px;
     gap: 20px;
   }
+
   &__content {
     display: flex;
     flex-direction: column;
     row-gap: 50px;
   }
+
   &__description {
     color: vars.$color-text-muted;
     font-size: 16px;
     width: 404px;
   }
+
   &__link {
     align-self: baseline;
     padding-inline: 92px;
   }
+
   &__box-right {
     grid-row: span 2;
     align-self: center;
@@ -34,9 +39,11 @@
     grid-column: span 2;
     margin-left: auto;
   }
+
   &__box-img {
     margin-bottom: 20px;
   }
+
   &__box-link {
     display: block;
     margin-bottom: 5px;
@@ -53,6 +60,7 @@
       outline: none;
     }
   }
+
   &__box-date {
     @extend %opensans-300;
     font-size: 16px;

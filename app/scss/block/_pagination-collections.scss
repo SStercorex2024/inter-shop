@@ -3,12 +3,14 @@
 
 .pagination-collections {
   padding: 50px 0 100px;
+
   &__list {
     display: flex;
     justify-content: center;
     align-items: center;
     column-gap: 2px;
   }
+
   &__item {
   }
 
@@ -22,7 +24,7 @@
     font-size: 16px;
 
     transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out,
-      opacity 0.3s ease-in-out;
+    opacity 0.3s ease-in-out;
 
     @include mixins.hover {
       color: vars.$color-focus;
@@ -38,6 +40,7 @@
     color: vars.$color-text-btn;
     border-radius: 8px;
   }
+
   &__link--active .pagination-collections__link--active {
     @include mixins.focus {
       color: vars.$color-focus;
@@ -46,6 +49,7 @@
 
   &__link--arrow {
     position: relative;
+
     &::after {
       content: "";
       position: absolute;
@@ -65,6 +69,7 @@
       transform-origin: 50% 50%;
     }
   }
+
   &__decor {
     width: 42px;
     height: 42px;
@@ -74,6 +79,7 @@
     color: vars.$color-text-muted;
     user-select: none;
   }
+
   &__link--disabled {
     display: none;
   }
