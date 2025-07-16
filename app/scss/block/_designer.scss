@@ -2,9 +2,11 @@
 
 .designer {
   position: relative;
+
   &__wrapper {
     padding: 150px 40px 210px;
   }
+
   &__decor-img {
     position: absolute;
     left: 50%;
@@ -13,9 +15,11 @@
     z-index: 6;
     pointer-events: none;
   }
+
   &__text {
     width: 404px;
   }
+
   &__title {
     margin-bottom: 50px;
   }
@@ -35,12 +39,14 @@
     flex-direction: column;
     justify-content: center;
   }
+
   &__link {
     margin-top: auto;
     display: inline-block;
     padding-inline: 93px;
     align-self: center;
   }
+
   &__caption {
     position: absolute;
     top: 30%;

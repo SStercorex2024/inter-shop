@@ -7,44 +7,55 @@
     padding-bottom: 78px;
     text-align: center;
   }
+
   &__wrapper {
     padding: 0 30px 128px;
   }
+
   &__form-box {
     position: relative;
     display: flex;
     flex-direction: column;
   }
+
   &__decor {
     position: absolute;
     top: -66px;
     right: -182px;
   }
+
   &__img {
     z-index: 22;
   }
+
   &__form-title {
     margin-bottom: 80px;
   }
+
   &__form-description {
     color: vars.$color-text-muted;
     margin-bottom: 30px;
     @extend %opensans-700;
   }
+
   &__input {
     color: vars.$color-text-muted;
     padding-bottom: 10px;
     border-bottom: 1px solid vars.$color-text-muted;
+
     &::placeholder {
       color: vars.$color-text-muted;
     }
+
     @include mixins.focus {
       color: vars.$color-focus;
     }
   }
+
   &__input + .appointment__input {
     margin-top: 20px;
   }
+
   &__btn {
     margin-top: auto;
   }

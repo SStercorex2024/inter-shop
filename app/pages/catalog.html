@@ -3,382 +3,487 @@
 <!--=include head.html -->
 
 <body>
-  <!--=include header.html -->
-  <main class="main">
-    <section class="catalog">
-      <div class="container">
-        <!--=include bread-crumbs.html -->
-        <div class="catalog-top">
-          <div class="catalog-top__views">
-            <span>View as</span>
-            <ul class="catalog-top__list">
-              <li class="catalog-top__item view-mode__btn-wrapper view-mode__btn-wrapper--active">
-                <button class="catalog-top__btn view-mode__btn--grid">
-                  <svg width="20" height="20">
-                    <use xlink:href="img/sprite.svg#catalog-grid"></use>
-                  </svg>
-                </button>
-              </li>
-              <li class="catalog-top__item view-mode__btn-wrapper">
-                <button class="catalog-top__btn view-mode__btn--line">
-                  <svg width="20" height="20">
-                    <use xlink:href="img/sprite.svg#catalog-line"></use>
-                  </svg>
-                </button>
-              </li>
-            </ul>
-          </div>
-          <h2 class="catalog-top__title">
-            WEDDING DRESSES
-          </h2>
-          <div class="sort__wrapper">
-            <svg width="12" height="6">
-              <use xlink:href="img/sprite.svg#sort-arrow-down"></use>
-            </svg>
-            <form class="sort">
-              <select name="sort" id="sort">
-                <option value="" disabled selected>Sort by popularity</option>
-                <option value="item">Item</option>
-                <option value="item">Item</option>
-                <option value="item">Item</option>
-                <option value="item">Item</option>
-              </select>
-            </form>
-          </div>
+<!--=include header.html -->
+<main class="main">
+  <section class="catalog">
+    <div class="container">
+      <!--=include bread-crumbs.html -->
+      <div class="catalog-top">
+        <div class="catalog-top__views">
+          <span>View as</span>
+          <ul class="catalog-top__list">
+            <li class="catalog-top__item view-mode__btn-wrapper view-mode__btn-wrapper--active">
+              <button class="catalog-top__btn view-mode__btn--grid">
+                <svg width="20" height="20">
+                  <use xlink:href="img/sprite.svg#catalog-grid"></use>
+                </svg>
+              </button>
+            </li>
+            <li class="catalog-top__item view-mode__btn-wrapper">
+              <button class="catalog-top__btn view-mode__btn--line">
+                <svg width="20" height="20">
+                  <use xlink:href="img/sprite.svg#catalog-line"></use>
+                </svg>
+              </button>
+            </li>
+          </ul>
         </div>
-        <!--catalog-top END-->
-        <!--catalog-body START-->
-        <div class="catalog-body">
-          <aside class="catalog-filters">
-            <form class="catalog__filter-form">
-              <div class="catalog__filterbox">
+        <button type="button" class="catalog-top__filter">
+          Filter
+          <svg width="12" height="6">
+            <use xlink:href="img/sprite.svg#sort-arrow-down"></use>
+          </svg>
+        </button>
+        <h2 class="catalog-top__title">
+          WEDDING DRESSES
+        </h2>
+        <div class="sort__wrapper">
+          <svg width="12" height="6">
+            <use xlink:href="img/sprite.svg#sort-arrow-down"></use>
+          </svg>
+          <form class="sort">
+            <select name="sort" id="sort">
+              <option value="" disabled selected>Sort by popularity</option>
+              <option value="item">Item</option>
+              <option value="item">Item</option>
+              <option value="item">Item</option>
+              <option value="item">Item</option>
+            </select>
+          </form>
+        </div>
+      </div>
+      <!--catalog-top END-->
+      <!--catalog-body START-->
+      <div class="catalog-body">
+        <aside class="catalog-filters">
+          <form class="catalog__filter-form">
+            <div class="catalog__filterbox">
                 <span class="catalog__filterbox-title">
                   PRICE
                 </span>
-                <div class="catalog__filtervox-itemrange">
-                  <div class="range">
-                    <div class="range__inputs">
-                      <label class="range__label">
-                        <input class="range__min range-count" type="text">
-                      </label>
-                      -
-                      <label class="range__label">
-                        <input class="range__max range-count" type="text">
-                      </label>
-                    </div>
-                    <div class="range__slider"></div>
-                    <ul class="range__list">
-                      <li class="range__item">300</li>
-                      <li class="range__item">600</li>
-                      <li class="range__item">1,000</li>
-                      <li class="range__item">1,500</li>
-                      <li class="range__item">2,000</li>
-                      <li class="range__item">2,500</li>
-                      <li class="range__item">3,000</li>
-                    </ul>
+              <div class="catalog__filtervox-itemrange">
+                <div class="range">
+                  <div class="range__inputs">
+                    <label class="range__label">
+                      <input class="range__min range-count" type="text">
+                    </label>
+                    -
+                    <label class="range__label">
+                      <input class="range__max range-count" type="text">
+                    </label>
                   </div>
+                  <div class="range__slider"></div>
+                  <ul class="range__list">
+                    <li class="range__item">300</li>
+                    <li class="range__item">600</li>
+                    <li class="range__item">1,000</li>
+                    <li class="range__item">1,500</li>
+                    <li class="range__item">2,000</li>
+                    <li class="range__item">2,500</li>
+                    <li class="range__item">3,000</li>
+                  </ul>
                 </div>
               </div>
-              <div class="catalog__filterbox">
+            </div>
+            <div class="catalog__filterbox">
                 <span class="catalog__filterbox-title">
                   SIZE
                 </span>
-                <div class="catalog__filterbox-items">
-                  <label class="checkbox-label">
-                    <input class="checkbox" type="checkbox">
-                    <span class="checkbox-style"></span>
-                    XS
-                  </label>
-                  <label class="checkbox-label">
-                    <input class="checkbox" type="checkbox">
-                    <span class="checkbox-style"></span>
-                    S
-                  </label>
-                  <label class="checkbox-label">
-                    <input class="checkbox" type="checkbox">
-                    <span class="checkbox-style"></span>
-                    M
-                  </label>
-                  <label class="checkbox-label">
-                    <input class="checkbox" type="checkbox">
-                    <span class="checkbox-style"></span>
-                    L
-                  </label>
-                  <label class="checkbox-label">
-                    <input class="checkbox" type="checkbox">
-                    <span class="checkbox-style"></span>
-                    XL
-                  </label>
-                  <label class="checkbox-label">
-                    <input class="checkbox" type="checkbox">
-                    <span class="checkbox-style"></span>
-                    XXL
-                  </label>
-                </div>
+              <div class="catalog__filterbox-items">
+                <label class="checkbox-label">
+                  <input class="checkbox" type="checkbox">
+                  <span class="checkbox-style"></span>
+                  XS
+                </label>
+                <label class="checkbox-label">
+                  <input class="checkbox" type="checkbox">
+                  <span class="checkbox-style"></span>
+                  S
+                </label>
+                <label class="checkbox-label">
+                  <input class="checkbox" type="checkbox">
+                  <span class="checkbox-style"></span>
+                  M
+                </label>
+                <label class="checkbox-label">
+                  <input class="checkbox" type="checkbox">
+                  <span class="checkbox-style"></span>
+                  L
+                </label>
+                <label class="checkbox-label">
+                  <input class="checkbox" type="checkbox">
+                  <span class="checkbox-style"></span>
+                  XL
+                </label>
+                <label class="checkbox-label">
+                  <input class="checkbox" type="checkbox">
+                  <span class="checkbox-style"></span>
+                  XXL
+                </label>
               </div>
-              <div class="catalog__filterbox">
+            </div>
+            <div class="catalog__filterbox">
                 <span class="catalog__filterbox-title">
                   COLOR
                 </span>
-                <div class="catalog__filterbox-items">
-                  <label class="radio-label">
-                    <input class="radio-box" type="radio">
-                    <span class="radio-style"></span>
-                    WHITE
-                  </label>
-                  <label class="radio-label">
-                    <input class="radio-box" type="radio">
-                    <span class="radio-style"></span>
-                    IVORY
-                  </label>
-                </div>
+              <div class="catalog__filterbox-items">
+                <label class="radio-label">
+                  <input class="radio-box" type="radio">
+                  <span class="radio-style"></span>
+                  WHITE
+                </label>
+                <label class="radio-label">
+                  <input class="radio-box" type="radio">
+                  <span class="radio-style"></span>
+                  IVORY
+                </label>
               </div>
-              <div class="catalog__filterbox">
+            </div>
+            <div class="catalog__filterbox">
                 <span class="catalog__filterbox-title">
                   MATERIAL
                 </span>
-                <div class="catalog__filterbox-items">
-                  <label class="checkbox-label">
-                    <input class="checkbox" type="checkbox">
-                    <span class="checkbox-style"></span>
-                    LACE
-                  </label>
-                  <label class="checkbox-label">
-                    <input class="checkbox" type="checkbox">
-                    <span class="checkbox-style"></span>
-                    SILK
-                  </label>
-                  <label class="checkbox-label">
-                    <input class="checkbox" type="checkbox">
-                    <span class="checkbox-style"></span>
-                    CREPE
-                  </label>
-                  <label class="checkbox-label">
-                    <input class="checkbox" type="checkbox">
-                    <span class="checkbox-style"></span>
-                    SATIN
-                  </label>
-                  <label class="checkbox-label">
-                    <input class="checkbox" type="checkbox">
-                    <span class="checkbox-style"></span>
-                    EMBROIDERY
-                  </label>
-                  <label class="checkbox-label">
-                    <input class="checkbox" type="checkbox">
-                    <span class="checkbox-style"></span>
-                    ECO
-                  </label>
-                </div>
+              <div class="catalog__filterbox-items">
+                <label class="checkbox-label">
+                  <input class="checkbox" type="checkbox">
+                  <span class="checkbox-style"></span>
+                  LACE
+                </label>
+                <label class="checkbox-label">
+                  <input class="checkbox" type="checkbox">
+                  <span class="checkbox-style"></span>
+                  SILK
+                </label>
+                <label class="checkbox-label">
+                  <input class="checkbox" type="checkbox">
+                  <span class="checkbox-style"></span>
+                  CREPE
+                </label>
+                <label class="checkbox-label">
+                  <input class="checkbox" type="checkbox">
+                  <span class="checkbox-style"></span>
+                  SATIN
+                </label>
+                <label class="checkbox-label">
+                  <input class="checkbox" type="checkbox">
+                  <span class="checkbox-style"></span>
+                  EMBROIDERY
+                </label>
+                <label class="checkbox-label">
+                  <input class="checkbox" type="checkbox">
+                  <span class="checkbox-style"></span>
+                  ECO
+                </label>
               </div>
-              <div class="catalog__filterbox">
+            </div>
+            <div class="catalog__filterbox">
                 <span class="catalog__filterbox-title">
                   STYLE
                 </span>
-                <div class="catalog__filterbox-itemline">
-                  <label class="checkbox-label">
-                    <input class="checkbox" type="checkbox">
-                    <span class="checkbox-style"></span>
-                    ALL
-                  </label>
-                  <label class="checkbox-label">
-                    <input class="checkbox" type="checkbox">
-                    <span class="checkbox-style"></span>
-                    BOHO
-                  </label>
-                  <label class="checkbox-label">
-                    <input class="checkbox" type="checkbox">
-                    <span class="checkbox-style"></span>
-                    ROMANTIC
-                  </label>
-                  <label class="checkbox-label">
-                    <input class="checkbox" type="checkbox">
-                    <span class="checkbox-style"></span>
-                    ELEGANT
-                  </label>
-                  <label class="checkbox-label">
-                    <input class="checkbox" type="checkbox">
-                    <span class="checkbox-style"></span>
-                    VINTAGE
-                  </label>
-                  <label class="checkbox-label">
-                    <input class="checkbox" type="checkbox">
-                    <span class="checkbox-style"></span>
-                    SIMPLE
-                  </label>
-                  <label class="checkbox-label">
-                    <input class="checkbox" type="checkbox">
-                    <span class="checkbox-style"></span>
-                    MODERN
-                  </label>
-                  <label class="checkbox-label">
-                    <input class="checkbox" type="checkbox">
-                    <span class="checkbox-style"></span>
-                    FORMAL
-                  </label>
-                  <label class="checkbox-label">
-                    <input class="checkbox" type="checkbox">
-                    <span class="checkbox-style"></span>
-                    PRINCESS
-                  </label>
-                  <label class="checkbox-label">
-                    <input class="checkbox" type="checkbox">
-                    <span class="checkbox-style"></span>
-                    GLAMOROUS
-                  </label>
-                  <label class="checkbox-label">
-                    <input class="checkbox" type="checkbox">
-                    <span class="checkbox-style"></span>
-                    MODEST
-                  </label>
-                  <label class="checkbox-label">
-                    <input class="checkbox" type="checkbox">
-                    <span class="checkbox-style"></span>
-                    CASUAL
-                  </label>
-                  <label class="checkbox-label">
-                    <input class="checkbox" type="checkbox">
-                    <span class="checkbox-style"></span>
-                    BEACH
-                  </label>
-                  <label class="checkbox-label">
-                    <input class="checkbox" type="checkbox">
-                    <span class="checkbox-style"></span>
-                    ELOPEMENT
-                  </label>
-                </div>
+              <div class="catalog__filterbox-itemline">
+                <label class="checkbox-label">
+                  <input class="checkbox" type="checkbox">
+                  <span class="checkbox-style"></span>
+                  ALL
+                </label>
+                <label class="checkbox-label">
+                  <input class="checkbox" type="checkbox">
+                  <span class="checkbox-style"></span>
+                  BOHO
+                </label>
+                <label class="checkbox-label">
+                  <input class="checkbox" type="checkbox">
+                  <span class="checkbox-style"></span>
+                  ROMANTIC
+                </label>
+                <label class="checkbox-label">
+                  <input class="checkbox" type="checkbox">
+                  <span class="checkbox-style"></span>
+                  ELEGANT
+                </label>
+                <label class="checkbox-label">
+                  <input class="checkbox" type="checkbox">
+                  <span class="checkbox-style"></span>
+                  VINTAGE
+                </label>
+                <label class="checkbox-label">
+                  <input class="checkbox" type="checkbox">
+                  <span class="checkbox-style"></span>
+                  SIMPLE
+                </label>
+                <label class="checkbox-label">
+                  <input class="checkbox" type="checkbox">
+                  <span class="checkbox-style"></span>
+                  MODERN
+                </label>
+                <label class="checkbox-label">
+                  <input class="checkbox" type="checkbox">
+                  <span class="checkbox-style"></span>
+                  FORMAL
+                </label>
+                <label class="checkbox-label">
+                  <input class="checkbox" type="checkbox">
+                  <span class="checkbox-style"></span>
+                  PRINCESS
+                </label>
+                <label class="checkbox-label">
+                  <input class="checkbox" type="checkbox">
+                  <span class="checkbox-style"></span>
+                  GLAMOROUS
+                </label>
+                <label class="checkbox-label">
+                  <input class="checkbox" type="checkbox">
+                  <span class="checkbox-style"></span>
+                  MODEST
+                </label>
+                <label class="checkbox-label">
+                  <input class="checkbox" type="checkbox">
+                  <span class="checkbox-style"></span>
+                  CASUAL
+                </label>
+                <label class="checkbox-label">
+                  <input class="checkbox" type="checkbox">
+                  <span class="checkbox-style"></span>
+                  BEACH
+                </label>
+                <label class="checkbox-label">
+                  <input class="checkbox" type="checkbox">
+                  <span class="checkbox-style"></span>
+                  ELOPEMENT
+                </label>
               </div>
-              <button class="catalog__cleanbtn btn">
-                clean all
-              </button>
-            </form>
-          </aside>
-          <div class="catalog-cards view-mode__cards view-mode__cards--grid">
-            <div class="catalog-card">
-              <picture>
-                <source srcset="img/catalog/catalog-card-1.avif" type="image/avif">
-                <source srcset="img/catalog/catalog-card-1.webp" type="image/webp">
-                <img class="catalog-card__img" src="img/catalog/catalog-card-1.jpg" alt="Alt text" loading="lazy">
-              </picture>
-              <a href="#" class="catalog-card__title">
-                Blanca
-              </a>
-              <p class="catalog-card__price">
-                € 1,850.00
-              </p>
             </div>
-            <div class="catalog-card">
-              <picture>
-                <source srcset="img/catalog/catalog-card-2.avif" type="image/avif">
-                <source srcset="img/catalog/catalog-card-2.webp" type="image/webp">
-                <img class="catalog-card__img" src="img/catalog/catalog-card-2.jpg" alt="Alt text" loading="lazy">
-              </picture>
-              <a href="#" class="catalog-card__title">
-                Blanca
-              </a>
-              <p class="catalog-card__price">
-                € 1,850.00
-              </p>
-            </div>
-            <div class="catalog-card">
-              <picture>
-                <source srcset="img/catalog/catalog-card-3.avif" type="image/avif">
-                <source srcset="img/catalog/catalog-card-3.webp" type="image/webp">
-                <img class="catalog-card__img" src="img/catalog/catalog-card-3.jpg" alt="Alt text" loading="lazy">
-              </picture>
-              <a href="#" class="catalog-card__title">
-                Blanca
-              </a>
-              <p class="catalog-card__price">
-                € 1,850.00
-              </p>
-            </div>
-            <div class="catalog-card">
-              <picture>
-                <source srcset="img/catalog/catalog-card-4.avif" type="image/avif">
-                <source srcset="img/catalog/catalog-card-4.webp" type="image/webp">
-                <img class="catalog-card__img" src="img/catalog/catalog-card-4.jpg" alt="Alt text" loading="lazy">
-              </picture>
-              <a href="#" class="catalog-card__title">
-                Blanca
-              </a>
-              <p class="catalog-card__price">
-                € 1,850.00
-              </p>
-            </div>
-            <div class="catalog-card">
-              <picture>
-                <source srcset="img/catalog/catalog-card-5.avif" type="image/avif">
-                <source srcset="img/catalog/catalog-card-5.webp" type="image/webp">
-                <img class="catalog-card__img" src="img/catalog/catalog-card-5.jpg" alt="Alt text" loading="lazy">
-              </picture>
-              <a href="#" class="catalog-card__title">
-                Blanca
-              </a>
-              <p class="catalog-card__price">
-                € 1,850.00
-              </p>
-            </div>
-            <div class="catalog-card">
-              <picture>
-                <source srcset="img/catalog/catalog-card-6.avif" type="image/avif">
-                <source srcset="img/catalog/catalog-card-6.webp" type="image/webp">
-                <img class="catalog-card__img" src="img/catalog/catalog-card-6.jpg" alt="Alt text" loading="lazy">
-              </picture>
-              <a href="#" class="catalog-card__title">
-                Blanca
-              </a>
-              <p class="catalog-card__price">
-                € 1,850.00
-              </p>
-            </div>
-            <div class="catalog-card">
-              <picture>
-                <source srcset="img/catalog/catalog-card-7.avif" type="image/avif">
-                <source srcset="img/catalog/catalog-card-7.webp" type="image/webp">
-                <img class="catalog-card__img" src="img/catalog/catalog-card-7.jpg" alt="Alt text" loading="lazy">
-              </picture>
-              <a href="#" class="catalog-card__title">
-                Blanca
-              </a>
-              <p class="catalog-card__price">
-                € 1,850.00
-              </p>
-            </div>
-            <div class="catalog-card">
-              <picture>
-                <source srcset="img/catalog/catalog-card-8.avif" type="image/avif">
-                <source srcset="img/catalog/catalog-card-8.webp" type="image/webp">
-                <img class="catalog-card__img" src="img/catalog/catalog-card-8.jpg" alt="Alt text" loading="lazy">
-              </picture>
-              <a href="#" class="catalog-card__title">
-                Blanca
-              </a>
-              <p class="catalog-card__price">
-                € 1,850.00
-              </p>
-            </div>
-            <div class="catalog-card">
-              <picture>
-                <source srcset="img/catalog/catalog-card-9.avif" type="image/avif">
-                <source srcset="img/catalog/catalog-card-9.webp" type="image/webp">
-                <img class="catalog-card__img" src="img/catalog/catalog-card-9.jpg" alt="Alt text" loading="lazy">
-              </picture>
-              <a href="#" class="catalog-card__title">
-                Blanca
-              </a>
-              <p class="catalog-card__price">
-                € 1,850.00
-              </p>
-            </div>
+            <button class="catalog__cleanbtn btn">
+              clean all
+            </button>
+          </form>
+        </aside>
+        <div class="catalog-cards view-mode__cards view-mode__cards--grid">
+          <div class="catalog-card">
+            <picture>
+              <source
+                srcset="img/catalog/catalog-card-1.avif"
+                type="image/avif"
+              >
+              <source
+                srcset="img/catalog/catalog-card-1.webp"
+                type="image/webp"
+              >
+              <img
+                class="catalog-card__img"
+                src="img/catalog/catalog-card-1.jpg"
+                alt="Alt text"
+                loading="lazy"
+              >
+            </picture>
+            <a href="#" class="catalog-card__title">
+              Blanca
+            </a>
+            <p class="catalog-card__price">
+              € 1,850.00
+            </p>
+          </div>
+          <div class="catalog-card">
+            <picture>
+              <source
+                srcset="img/catalog/catalog-card-2.avif"
+                type="image/avif"
+              >
+              <source
+                srcset="img/catalog/catalog-card-2.webp"
+                type="image/webp"
+              >
+              <img
+                class="catalog-card__img"
+                src="img/catalog/catalog-card-2.jpg"
+                alt="Alt text"
+                loading="lazy"
+              >
+            </picture>
+            <a href="#" class="catalog-card__title">
+              Blanca
+            </a>
+            <p class="catalog-card__price">
+              € 1,850.00
+            </p>
+          </div>
+          <div class="catalog-card">
+            <picture>
+              <source
+                srcset="img/catalog/catalog-card-3.avif"
+                type="image/avif"
+              >
+              <source
+                srcset="img/catalog/catalog-card-3.webp"
+                type="image/webp"
+              >
+              <img
+                class="catalog-card__img"
+                src="img/catalog/catalog-card-3.jpg"
+                alt="Alt text"
+                loading="lazy"
+              >
+            </picture>
+            <a href="#" class="catalog-card__title">
+              Blanca
+            </a>
+            <p class="catalog-card__price">
+              € 1,850.00
+            </p>
+          </div>
+          <div class="catalog-card">
+            <picture>
+              <source
+                srcset="img/catalog/catalog-card-4.avif"
+                type="image/avif"
+              >
+              <source
+                srcset="img/catalog/catalog-card-4.webp"
+                type="image/webp"
+              >
+              <img
+                class="catalog-card__img"
+                src="img/catalog/catalog-card-4.jpg"
+                alt="Alt text"
+                loading="lazy"
+              >
+            </picture>
+            <a href="#" class="catalog-card__title">
+              Blanca
+            </a>
+            <p class="catalog-card__price">
+              € 1,850.00
+            </p>
+          </div>
+          <div class="catalog-card">
+            <picture>
+              <source
+                srcset="img/catalog/catalog-card-5.avif"
+                type="image/avif"
+              >
+              <source
+                srcset="img/catalog/catalog-card-5.webp"
+                type="image/webp"
+              >
+              <img
+                class="catalog-card__img"
+                src="img/catalog/catalog-card-5.jpg"
+                alt="Alt text"
+                loading="lazy"
+              >
+            </picture>
+            <a href="#" class="catalog-card__title">
+              Blanca
+            </a>
+            <p class="catalog-card__price">
+              € 1,850.00
+            </p>
+          </div>
+          <div class="catalog-card">
+            <picture>
+              <source
+                srcset="img/catalog/catalog-card-6.avif"
+                type="image/avif"
+              >
+              <source
+                srcset="img/catalog/catalog-card-6.webp"
+                type="image/webp"
+              >
+              <img
+                class="catalog-card__img"
+                src="img/catalog/catalog-card-6.jpg"
+                alt="Alt text"
+                loading="lazy"
+              >
+            </picture>
+            <a href="#" class="catalog-card__title">
+              Blanca
+            </a>
+            <p class="catalog-card__price">
+              € 1,850.00
+            </p>
+          </div>
+          <div class="catalog-card">
+            <picture>
+              <source
+                srcset="img/catalog/catalog-card-7.avif"
+                type="image/avif"
+              >
+              <source
+                srcset="img/catalog/catalog-card-7.webp"
+                type="image/webp"
+              >
+              <img
+                class="catalog-card__img"
+                src="img/catalog/catalog-card-7.jpg"
+                alt="Alt text"
+                loading="lazy"
+              >
+            </picture>
+            <a href="#" class="catalog-card__title">
+              Blanca
+            </a>
+            <p class="catalog-card__price">
+              € 1,850.00
+            </p>
+          </div>
+          <div class="catalog-card">
+            <picture>
+              <source
+                srcset="img/catalog/catalog-card-8.avif"
+                type="image/avif"
+              >
+              <source
+                srcset="img/catalog/catalog-card-8.webp"
+                type="image/webp"
+              >
+              <img
+                class="catalog-card__img"
+                src="img/catalog/catalog-card-8.jpg"
+                alt="Alt text"
+                loading="lazy"
+              >
+            </picture>
+            <a href="#" class="catalog-card__title">
+              Blanca
+            </a>
+            <p class="catalog-card__price">
+              € 1,850.00
+            </p>
+          </div>
+          <div class="catalog-card">
+            <picture>
+              <source
+                srcset="img/catalog/catalog-card-9.avif"
+                type="image/avif"
+              >
+              <source
+                srcset="img/catalog/catalog-card-9.webp"
+                type="image/webp"
+              >
+              <img
+                class="catalog-card__img"
+                src="img/catalog/catalog-card-9.jpg"
+                alt="Alt text"
+                loading="lazy"
+              >
+            </picture>
+            <a href="#" class="catalog-card__title">
+              Blanca
+            </a>
+            <p class="catalog-card__price">
+              € 1,850.00
+            </p>
           </div>
         </div>
-        <!--catalog-body END-->
-        <!--=include templates/pagination-collections.html -->
       </div>
-    </section>
-    <!--=include footer.html -->
-  </main>
-  <script src="js/main.min.js"></script>
+      <!--catalog-body END-->
+      <!--=include templates/pagination-collections.html -->
+    </div>
+  </section>
+  <!--=include footer.html -->
+</main>
+<script src="js/main.min.js"></script>
 </body>
 
 </html>

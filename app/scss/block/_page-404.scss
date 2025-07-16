@@ -6,14 +6,18 @@
     margin-inline: auto;
     padding: 40px 18px 22px 40px;
   }
+
   &__inner {
     display: flex;
     justify-content: center;
   }
+
   &__box-left {
   }
+
   &__img-1 {
   }
+
   &__box-center {
     margin-inline: 32px 14px;
     width: 732px;
@@ -28,6 +32,7 @@
       margin-top: 240px;
     }
   }
+
   &__box-text {
     position: relative;
     @extend %lora-400;
@@ -42,11 +47,13 @@
       margin-left: auto;
     }
   }
+
   &__title {
     padding: 10px;
     display: flex;
     text-transform: uppercase;
   }
+
   &__link {
     position: absolute;
     width: 100%;
@@ -58,20 +65,25 @@
       box-shadow: 0 0 24px 10px rgba(255, 109, 5, 0.2);
     }
   }
+
   &__box-right {
   }
+
   &__img-2 {
   }
 }
+
 .move {
   opacity: 0.2;
   overflow: hidden;
 }
+
 .move-row {
   display: inline-flex;
   white-space: nowrap;
   column-gap: 100px;
 }
+
 .move-text {
   display: inline-flex;
   align-items: center;
@@ -88,7 +100,7 @@
     padding: 30px;
   }
 }
-	
+
 @keyframes moving {
   0% {
     transform: translateX(0);

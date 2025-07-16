@@ -3,15 +3,18 @@
 
 .bread-crumbs {
   padding: 50px 0 80px;
+
   &__list {
     display: flex;
     column-gap: 16px;
   }
+
   &__item {
     position: relative;
     font-size: 16px;
     color: vars.$color-text-muted;
   }
+
   &__item + .bread-crumbs__item {
     &::before {
       content: "/";
@@ -21,6 +24,7 @@
       left: -10px;
     }
   }
+
   &__link {
     @include mixins.hover {
       color: vars.$color-focus;

@@ -8,7 +8,10 @@
       "icon": "1",
       "name": "Irina",
       "desc": "I’m in love with this dress! The classic black design is both timeless and sophisticated. It hugs my body perfectly and the material feels like something from a high-end boutique. I wore it to a formal dinner and felt like a movie star. Would 100% recommend!",
-      "images": ["1", "2"]
+      "images": [
+        "1",
+        "2"
+      ]
     },
     {
       "day": "29",
@@ -28,7 +31,10 @@
       "icon": "1",
       "name": "Merry",
       "desc": "I’m in love with this dress! The classic black design is both timeless and sophisticated. It hugs my body perfectly and the material feels like something from a high-end boutique. I wore it to a formal dinner and felt like a movie star. Would 100% recommend!",
-      "images": ["1", "2"]
+      "images": [
+        "1",
+        "2"
+      ]
     },
     {
       "day": "7",

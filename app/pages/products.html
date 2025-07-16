@@ -5,155 +5,180 @@
 <body>
 <!--=include header.html -->
 <main class="main">
-    <section class="products">
-        <!--=include bread-crumbs.html -->
-        <div class="container">
-            <div class="products__content grid">
-                <div class="products__imgs grid">
-                    <picture>
-                        <source srcset="img/products/products-1.avif" type="image/avif">
-                        <source srcset="img/products/products-1.webp" type="image/webp">
-                        <img class="products__img" src="img/products/products-1.jpg" alt="Alt text" loading="lazy">
-                    </picture>
-                    <picture>
-                        <source srcset="img/products/products-2.avif" type="image/avif">
-                        <source srcset="img/products/products-2.webp" type="image/webp">
-                        <img class="products__img" src="img/products/products-2.jpg" alt="Alt text" loading="lazy">
-                    </picture>
-                    <picture>
-                        <source srcset="img/products/products-3.avif" type="image/avif">
-                        <source srcset="img/products/products-3.webp" type="image/webp">
-                        <img class="products__img products__img-right" src="img/products/products-3.jpg"
-                             alt="Alt text" loading="lazy">
-                    </picture>
-                </div>
-                <div class="products__text">
-                    <h2 class="products__title title title--medium">
-                        NAOMI
-                    </h2>
-                    <p class="products__price">
-                        € 2,600
-                    </p>
-                    <dl class="products__list">
-                        <dt class="products__list-term">
-                            COLLECTION
-                        </dt>
-                        <dd class="products__list-difin">
-                            ICONIC COLLECTION
-                        </dd>
-                        <dt class="products__list-term">
-                            COLOR
-                        </dt>
-                        <dd class="products__list-difin products__list-radio">
-                            <label class="radio-label">
-                                <input class="radio-box" type="radio">
-                                <span class="radio-style"></span>
-                                WHITE
-                            </label>
-                            <label class="radio-label">
-                                <input class="radio-box" type="radio">
-                                <span class="radio-style"></span>
-                                IVORY
-                            </label>
-                        </dd>
-                        <dd class="products__list-text">
-                            The dress has a principled satin corset that harks back to ancient times when beauty was
-                            defined by luxurious fabrics and exquisite tailoring.
-
-                        </dd>
-                        <dd class="products__list-text">
-
-                            Naomi catches the eye with its intricate embroidered lace, adding a unique charm and
-                            sparkle to the dress. Its light and airy skirt is made of the finest materials, creating
-                            an effect of lightness and grace with every movement of the bride.
-                            The "Naomi" dress will perfectly accentuate the figure and adorn the bride's look on her
-                            special day.
-                        </dd>
-                        <dt class="products__list-term">
-                            SIZE
-                        </dt>
-                        <dd class="products__list-difin products__list-checkbox">
-                            <label class="checkbox-label">
-                                <input class="checkbox" type="checkbox">
-                                <span class="checkbox-style"></span>
-                                XS
-                            </label>
-                            <label class="checkbox-label">
-                                <input class="checkbox" type="checkbox">
-                                <span class="checkbox-style"></span>
-                                S
-                            </label>
-                            <label class="checkbox-label">
-                                <input class="checkbox" type="checkbox">
-                                <span class="checkbox-style"></span>
-                                M
-                            </label>
-                            <label class="checkbox-label">
-                                <input class="checkbox" type="checkbox">
-                                <span class="checkbox-style"></span>
-                                L
-                            </label>
-                            <label class="checkbox-label">
-                                <input class="checkbox" type="checkbox">
-                                <span class="checkbox-style"></span>
-                                XL
-                            </label>
-                            <label class="checkbox-label">
-                                <input class="checkbox" type="checkbox">
-                                <span class="checkbox-style"></span>
-                                XXL
-                            </label>
-                        </dd>
-                    </dl>
-                    <div class="products__btns">
-                        <button class="products__btn products__btn-half btn">
-                            <svg width="16" height="16">
-                                <use xlink:href="./img/sprite.svg#icon-size"></use>
-                            </svg>
-                            Size giude
-                        </button>
-                        <button class="products__btn products__btn-half btn">
-                            <svg width="16" height="14">
-                                <use xlink:href="./img/sprite.svg#like"></use>
-                            </svg>
-                            Favorites
-                        </button>
-                        <button class="products__btn products__btn-large btn">
-                            ADD TO BAG
-                        </button>
-                    </div>
-                </div>
-            </div>
+  <section class="products">
+    <!--=include bread-crumbs.html -->
+    <div class="container">
+      <div class="products__content grid">
+        <div class="products__imgs grid">
+          <picture>
+            <source srcset="img/products/products-1.avif" type="image/avif">
+            <source srcset="img/products/products-1.webp" type="image/webp">
+            <img
+              class="products__img"
+              src="img/products/products-1.jpg"
+              alt="Alt text"
+              loading="lazy"
+            >
+          </picture>
+          <picture>
+            <source srcset="img/products/products-2.avif" type="image/avif">
+            <source srcset="img/products/products-2.webp" type="image/webp">
+            <img
+              class="products__img"
+              src="img/products/products-2.jpg"
+              alt="Alt text"
+              loading="lazy"
+            >
+          </picture>
+          <picture>
+            <source srcset="img/products/products-3.avif" type="image/avif">
+            <source srcset="img/products/products-3.webp" type="image/webp">
+            <img
+              class="products__img products__img-right"
+              src="img/products/products-3.jpg"
+              alt="Alt text"
+              loading="lazy"
+            >
+          </picture>
         </div>
-    </section>
-    <section class="accessories">
-        <div class="container">
-            <div class="accessories__inner">
-                <img class="accessories__decor" src="img/accessories/accessories-decor.svg" alt="">
-                <div class="accessories__title title title--small">
-                    ACCESSORIES
-                </div>
-                <div class="accessories__slider swiper">
-                    <div class="accessories__wrapper swiper-wrapper">
-                        <!--=include rendered/accessories.html -->
-                    </div>
-                    <div class="accessories__arrow arrow-next">
-                        <svg width="10" height="18">
-                            <use xlink:href="img/sprite.svg#arrow-slider-next"></use>
-                        </svg>
-                    </div>
-                    <div class="accessories__arrow arrow-prev">
-                        <svg width="10" height="18">
-                            <use xlink:href="img/sprite.svg#arrow-slider-prev"></use>
-                        </svg>
-                    </div>
-                </div>
-            </div>
+        <div class="products__text">
+          <h2 class="products__title title title--medium">
+            NAOMI
+          </h2>
+          <p class="products__price">
+            € 2,600
+          </p>
+          <dl class="products__list">
+            <dt class="products__list-term">
+              COLLECTION
+            </dt>
+            <dd class="products__list-difin">
+              ICONIC COLLECTION
+            </dd>
+            <dt class="products__list-term">
+              COLOR
+            </dt>
+            <dd class="products__list-difin products__list-radio">
+              <label class="radio-label">
+                <input class="radio-box" type="radio">
+                <span class="radio-style"></span>
+                WHITE
+              </label>
+              <label class="radio-label">
+                <input class="radio-box" type="radio">
+                <span class="radio-style"></span>
+                IVORY
+              </label>
+            </dd>
+            <dd class="products__list-text">
+              The dress has a principled satin corset that harks back to ancient
+              times when beauty was
+              defined by luxurious fabrics and exquisite tailoring.
+
+            </dd>
+            <dd class="products__list-text">
+
+              Naomi catches the eye with its intricate embroidered lace, adding
+              a unique charm and
+              sparkle to the dress. Its light and airy skirt is made of the
+              finest materials, creating
+              an effect of lightness and grace with every movement of the bride.<br>
+              The "Naomi" dress will perfectly accentuate the figure and adorn
+              the bride's look on her
+              special day.
+            </dd>
+            <dt class="products__list-term">
+              SIZE
+            </dt>
+            <dd class="products__list-difin products__list-checkbox">
+              <label class="checkbox-label">
+                <input class="checkbox" type="checkbox">
+                <span class="checkbox-style"></span>
+                XS
+              </label>
+              <label class="checkbox-label">
+                <input class="checkbox" type="checkbox">
+                <span class="checkbox-style"></span>
+                S
+              </label>
+              <label class="checkbox-label">
+                <input class="checkbox" type="checkbox">
+                <span class="checkbox-style"></span>
+                M
+              </label>
+              <label class="checkbox-label">
+                <input class="checkbox" type="checkbox">
+                <span class="checkbox-style"></span>
+                L
+              </label>
+              <label class="checkbox-label">
+                <input class="checkbox" type="checkbox">
+                <span class="checkbox-style"></span>
+                XL
+              </label>
+              <label class="checkbox-label">
+                <input class="checkbox" type="checkbox">
+                <span class="checkbox-style"></span>
+                XXL
+              </label>
+            </dd>
+          </dl>
+          <div class="products__btns modal-block">
+            <button class="products__btn products__btn-half btn">
+              <svg width="16" height="16">
+                <use xlink:href="./img/sprite.svg#icon-size"></use>
+              </svg>
+              Size giude
+            </button>
+            <button class="products__btn products__btn-half btn">
+              <svg width="16" height="14">
+                <use xlink:href="./img/sprite.svg#like"></use>
+              </svg>
+              Favorites
+            </button>
+            <button class="products__btn products__btn-large btn" id="showModal">
+              ADD TO BAG
+            </button>
+          </div>
+          <!--checkout__details-bag START-->
+          <!--=include detailsBag/detailsBag.html -->
+          <!--checkout__details-bag END-->
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
+  <section class="accessories">
+    <div class="container">
+      <div class="accessories__inner">
+        <img
+          class="accessories__decor"
+          src="img/accessories/accessories-decor.svg"
+          alt=""
+        >
+        <div class="accessories__title title title--small">
+          ACCESSORIES
+        </div>
+        <div class="accessories__slider swiper">
+          <div class="accessories__wrapper swiper-wrapper">
+            <!--=include rendered/accessories.html -->
+          </div>
+          <div class="accessories__arrow arrow-next">
+            <svg width="10" height="18">
+              <use xlink:href="img/sprite.svg#arrow-slider-next"></use>
+            </svg>
+          </div>
+          <div class="accessories__arrow arrow-prev">
+            <svg width="10" height="18">
+              <use xlink:href="img/sprite.svg#arrow-slider-prev"></use>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 <!--=include footer.html -->
-<script type="module" src="js/main.min.js"></script>
+<script src="js/main.min.js"></script>
 </body>
 
 </html>

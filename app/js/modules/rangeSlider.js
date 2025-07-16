@@ -50,7 +50,7 @@ function rangeSlider() {
       input.addEventListener("keydown", (e) => {
         if (e.key === "Enter") {
           e.preventDefault();
-          input.dispatchEvent(new Event("change", { bubbles: true }));
+          input.dispatchEvent(new Event("change", {bubbles: true}));
         }
       });
     });
