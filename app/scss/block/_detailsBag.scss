@@ -180,7 +180,7 @@
   display: block;
   position: fixed;
   inset: 0;
-  z-index: 99;
+  z-index: vars.$z-index-details-bag-active;
   background-color: vars.$color-text-btn;
   overflow-y: auto;
 }

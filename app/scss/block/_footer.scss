@@ -1,4 +1,5 @@
 @use "../base/vars";
+@use '../base/mixins';
 
 .footer {
   font-size: 16px;
@@ -26,6 +27,15 @@
       row-gap: 5px;
     }
 
+    &--item {
+      transition-duration: vars.$transition-duration;
+      cursor: pointer;
+
+      @include mixins.hover {
+        opacity: 0.6;
+      }
+    }
+
     &--address {
       line-height: 1.55;
     }
@@ -46,6 +56,15 @@
 
     &--link {
       border-bottom: 1px solid vars.$color-text-muted-35;
+    }
+
+    &--item {
+      text-align: center;
+      transition-duration: vars.$transition-duration;
+
+      @include mixins.hover {
+        color: vars.$color-focus;
+      }
     }
   }
 

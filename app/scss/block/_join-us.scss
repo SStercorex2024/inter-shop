@@ -49,7 +49,7 @@
 
   &__btn {
     position: relative;
-    z-index: 9;
+    z-index: vars.$z-index-join-us-btn;
   }
 
   &__caption {

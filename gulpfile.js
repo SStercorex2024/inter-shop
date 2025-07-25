@@ -21,7 +21,20 @@ const gulpData = require("gulp-data");
 const fs = require("fs");
 const path = require("path");
 const postcss = require("gulp-postcss");
+const htmlmin = require("gulp-htmlmin");
 const pxtorem = require("postcss-pxtorem");
+
+
+function favicons() {
+  return src("app/favicon/**/*")
+  .pipe(dest("dist/favicon"));
+}
+
+function html() {
+  return src("app/*.html")
+  .pipe(htmlmin({collapseWhitespace: true}))
+  .pipe(dest("dist"));
+}
 
 function nunjucks(done) {
   const njkFolder = "app/njk-pages/";
@@ -178,14 +191,14 @@ function building() {
       "!app/img/src/**",
       "app/fonts/*.woff2",
       "app/js/main.min.js",
-      "app/index.html",
+      "app/*.html",
     ],
     {base: "app"}
   ).pipe(dest("dist"));
 }
 
 function cleanDist() {
-  return src("dist").pipe(clean());
+  return src("dist", {allowEmpty: true}).pipe(clean());
 }
 
 exports.fonts = fonts;
@@ -199,7 +212,7 @@ exports.building = building;
 exports.cleanDist = cleanDist;
 exports.nunjucks = nunjucks;
 
-exports.build = series(cleanDist, stylesProd, building);
+exports.build = series(cleanDist, nunjucks, stylesProd, building, favicons);
 exports.default = parallel(
   styles,
   scripts,

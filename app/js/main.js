@@ -217,11 +217,11 @@ const swiperCustomer = () => {
     breakpoints: {
       360: {
         spaceBetween: 10,
-        slidesPerView: 2,
+        slidesPerView: "auto",
       },
       768: {
         spaceBetween: 16,
-        slidesPerView: 4,
+        slidesPerView: "auto",
       },
       1000: {
         spaceBetween: 16,
@@ -376,8 +376,21 @@ const counterPrice = () => {
   })
 }
 
+const asideFilters = () => {
+  const btnFilter = document.querySelector(".catalog-top__filter")
+  const asideBar = document.querySelector(".catalog-filters")
+
+  if (!btnFilter && !asideBar) return
+
+  btnFilter.addEventListener('click', () => {
+    console.log('click')
+    asideBar.classList.toggle('catalog-filters--active')
+  })
+}
+
 
 document.addEventListener('DOMContentLoaded', () => {
+  if (typeof asideFilters === "function") asideFilters()
   if (typeof counterPrice === "function") counterPrice()
   if (typeof deleteItemBag === "function") deleteItemBag()
   if (typeof activeStyleCheckoutInfoRadio === "function") activeStyleCheckoutInfoRadio()
