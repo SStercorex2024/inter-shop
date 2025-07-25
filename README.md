@@ -1,1 +1,1 @@
-The project is available here: https://lustrous-snickerdoodle-abf269.netlify.app/
+The project is available here: https://loquacious-empanada-b0118a.netlify.app/
