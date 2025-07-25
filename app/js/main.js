@@ -1,7 +1,3 @@
-const swiper = new Swiper('.swiper', {
-  loop: true,
-});
-
 const onlyNumbers = (string) => {
   return Number(string.replace(/[^0-9]/g, ''))
 }
@@ -78,9 +74,14 @@ const mobileMenuBtn = () => {
 
   if (!menuBtn || !menu) return;
 
+  document.addEventListener('wheel', () => {
+    if (menu.classList.contains("menu--active")) {
+      menu.classList.remove("menu--active")
+    }
+  })
 
   menuBtn.addEventListener("click", () => {
-    menu.classList.toggle("menu--active");
+    menu.classList.toggle("menu--active")
   });
 };
 
@@ -169,6 +170,8 @@ const swiperInit = () => {
   const el = document.querySelector(".accessories__slider");
   if (!el) return;
 
+  const isMobile = window.innerWidth < 768;
+
   const swiper = new Swiper(el, {
     loop: true,
     navigation: {
@@ -192,7 +195,11 @@ const swiperInit = () => {
         spaceBetween: 30,
         slidesPerView: 4,
       },
-    }
+    },
+    simulateTouch: isMobile,
+    allowTouchMove: isMobile,
+    mousewheel: false,
+    keyboard: true,
   });
 }
 
@@ -229,36 +236,6 @@ const swiperCustomer = () => {
       },
     }
   });
-}
-
-const viewMode = () => {
-  const gridBtn = document.querySelector(".view-mode__btn--grid");
-  const lineBtn = document.querySelector(".view-mode__btn--line");
-  const cardsContainer = document.querySelector(".view-mode__cards");
-  const viewBtns = document.querySelectorAll(".view-mode__btn-wrapper");
-
-  if (!gridBtn || !lineBtn || !cardsContainer) return;
-
-  const toggleView = (mode) => {
-    cardsContainer.classList.toggle("view-mode__cards--grid", mode === "grid");
-    cardsContainer.classList.toggle("view-mode__cards--line", mode === "line");
-
-    viewBtns.forEach((btn) =>
-      btn.classList.remove("view-mode__btn-wrapper--active")
-    );
-
-    if (mode === "grid") {
-      gridBtn
-      .closest(".view-mode__btn-wrapper")
-      .classList.add("view-mode__btn-wrapper--active");
-    } else {
-      lineBtn
-      .closest(".view-mode__btn-wrapper")
-      .classList.add("view-mode__btn-wrapper--active");
-    }
-  };
-  gridBtn.addEventListener("click", () => toggleView("grid"));
-  lineBtn.addEventListener("click", () => toggleView("line"));
 }
 
 const blogChangeGridToLine = () => {
@@ -388,6 +365,54 @@ const asideFilters = () => {
   })
 }
 
+const checkClassOnResize = (cardsContainer) => {
+  // const cardsContainer = document.querySelector(".view-mode__cards")
+  if (!cardsContainer) return;
+
+  if (window.innerWidth <= 680) {
+    if (cardsContainer.classList.contains('view-mode__cards--line')) {
+      cardsContainer.classList.remove('view-mode__cards--line')
+      cardsContainer.classList.add('view-mode__cards--grid')
+    }
+  }
+};
+
+
+const viewMode = () => {
+  const gridBtn = document.querySelector(".view-mode__btn--grid")
+  const lineBtn = document.querySelector(".view-mode__btn--line")
+  const cardsContainer = document.querySelector(".view-mode__cards")
+  const viewBtns = document.querySelectorAll(".view-mode__btn-wrapper")
+
+  checkClassOnResize(cardsContainer)
+
+  window.addEventListener("resize", () => {
+    checkClassOnResize(cardsContainer);
+  });
+
+  if (!gridBtn || !lineBtn || !cardsContainer) return
+
+  const toggleView = (mode) => {
+    cardsContainer.classList.toggle("view-mode__cards--grid", mode === "grid")
+    cardsContainer.classList.toggle("view-mode__cards--line", mode === "line")
+
+    viewBtns.forEach((btn) =>
+      btn.classList.remove("view-mode__btn-wrapper--active")
+    );
+
+    if (mode === "grid") {
+      gridBtn
+      .closest(".view-mode__btn-wrapper")
+      .classList.add("view-mode__btn-wrapper--active")
+    } else {
+      lineBtn
+      .closest(".view-mode__btn-wrapper")
+      .classList.add("view-mode__btn-wrapper--active")
+    }
+  };
+  gridBtn.addEventListener("click", () => toggleView("grid"))
+  lineBtn.addEventListener("click", () => toggleView("line"))
+}
 
 document.addEventListener('DOMContentLoaded', () => {
   if (typeof asideFilters === "function") asideFilters()
@@ -397,17 +422,17 @@ document.addEventListener('DOMContentLoaded', () => {
   if (typeof modalCheckout === "function") modalCheckout()
   if (typeof blogChangeGridToLine === "function") blogChangeGridToLine()
   if (typeof clickForWidthOnImgReviews === "function") clickForWidthOnImgReviews()
-  if (typeof mobileMenuBtn === "function") mobileMenuBtn();
+  if (typeof mobileMenuBtn === "function") mobileMenuBtn()
   if (typeof numbersInput === "function") {
-    numbersInput(".input-numbers-only");
+    numbersInput(".input-numbers-only")
   }
-  if (typeof viewMode === "function") viewMode();
-  if (typeof inputsCount === "function") inputsCount();
-  if (typeof rangeSlider === "function") rangeSlider();
-  if (typeof swiperCustomer === "function") swiperCustomer();
-  if (typeof swiperInit === "function") swiperInit();
-  if (typeof initSanitize === "function") initSanitize();
-  if (typeof likeBtn === "function") likeBtn();
-  if (typeof linkActive === "function") linkActive();
+  if (typeof viewMode === "function") viewMode()
+  if (typeof inputsCount === "function") inputsCount()
+  if (typeof rangeSlider === "function") rangeSlider()
+  if (typeof swiperCustomer === "function") swiperCustomer()
+  if (typeof swiperInit === "function") swiperInit()
+  if (typeof initSanitize === "function") initSanitize()
+  if (typeof likeBtn === "function") likeBtn()
+  if (typeof linkActive === "function") linkActive()
 })
 

@@ -546,7 +546,7 @@
     &__list {
       align-items: center;
       flex-direction: column;
-      row-gap: 80px;
+      row-gap: 30px;
     }
   }
   .menu.menu--active {
@@ -639,7 +639,13 @@
     margin-inline: 10px;
   }
   .view-mode__cards--line .categories__img {
-    min-width: 250px;
+    width: 27.1%;
+  }
+  .categories__date {
+    opacity: 0.6;
+    padding: 4px;
+    background-color: vars.$color-text-btn;
+    border-radius: 20px;
   }
   .blog__cards.view-mode__cards--grid {
     grid-template-columns: repeat(2, 1fr);
@@ -948,6 +954,9 @@
   }
   .our-blog__description {
     width: 100%;
+  }
+  .blog__btns{
+    @include mixins.visually-hidden;
   }
 }
 

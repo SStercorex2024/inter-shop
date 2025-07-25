@@ -6,6 +6,17 @@
   background-repeat: no-repeat;
   background-position: 84px -38%;
 
+  .bread-crumbs {
+    padding: 50px 0 50px;
+
+    &__item--home {
+      opacity: 0.5;
+      pointer-events: none;
+      user-select: none;
+      cursor: default;
+    }
+  }
+
   &__inner {
     display: flex;
     margin-inline: 30px;
