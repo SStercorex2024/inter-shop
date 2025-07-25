@@ -25,6 +25,13 @@
     text-transform: uppercase;
   }
 
+  .bread-crumbs__item--blog-one {
+    opacity: 0.5;
+    pointer-events: none;
+    user-select: none;
+    cursor: default;
+  }
+
   &__row {
     display: flex;
     align-items: center;
