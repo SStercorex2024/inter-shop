@@ -2,6 +2,14 @@
 @use "../base/mixins";
 
 .collections {
+
+  .bread-crumbs__item--collections {
+    opacity: 0.5;
+    pointer-events: none;
+    user-select: none;
+    cursor: default;
+  }
+
   &-top {
     background-position: center center;
     background-repeat: no-repeat;

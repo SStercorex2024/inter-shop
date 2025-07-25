@@ -2,6 +2,14 @@
 @use "../base/mixins";
 
 .catalog {
+
+  .bread-crumbs__item--catalog {
+    opacity: 0.5;
+    pointer-events: none;
+    user-select: none;
+    cursor: default;
+  }
+
   .checkbox-label {
     display: block;
     margin-bottom: 10px;
@@ -70,13 +78,9 @@
 
   &__filter {
     align-items: center;
-    display: flex;
+    display: none;
     column-gap: 10px;
     color: vars.$color-text-muted;
-
-    svg {
-
-    }
   }
 
   &__views {
@@ -149,6 +153,22 @@
   border: 1px solid vars.$color-text-muted;
   width: 270px;
   align-self: flex-start;
+
+  &.catalog-filters--active {
+    display: block;
+    padding: 16px 10px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    translate: 0 0;
+    scroll-behavior: smooth;
+    overflow-y: auto;
+    z-index: vars.$z-index-catalog-filters;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    background-color: vars.$color-text-btn;
+    width: 400px;
+    max-height: 60vh;
+  }
 }
 
 .range {

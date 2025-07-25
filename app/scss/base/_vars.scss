@@ -15,6 +15,18 @@ $color-focus-08: rgba(255, 109, 5, 0.8);
 $color-active: #616161ab;
 $color-dark: #161815;
 
+$z-index-catalog-filters: 100;
+$z-index-details-bag-active: 99;
+$z-index-accessories__arrow: 55;
+$z-index-accessories-decor:25;
+$z-index-appointment-img: 22;
+$z-index-menu-btn:20;
+$z-index-join-us-btn:18;
+$z-index-our-advantages__title: 14;
+$z-index-designer__decor-img:10;
+
+$transition-duration: 0.6s;
+
 %opensans-300 {
   font-family: "OpenSans-Light", sans-serif;
   font-weight: 300;
